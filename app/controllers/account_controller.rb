@@ -2,6 +2,7 @@ class AccountController < ApplicationController
 
 	def new
 		@account = Account.new
+		@account.build_owner
 	end
 
 	def create
@@ -15,7 +16,8 @@ class AccountController < ApplicationController
 
 	private
 	def account_params
-		params.require(:account).permit(:subdomain)
+		params.require(:account).permit(:subdomain, owner_attributes: [:first_name, :second_name,
+			:email, :password, :password_confirmation])
 	end
 		
 end
