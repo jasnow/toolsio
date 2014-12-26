@@ -1,9 +1,21 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :account do
-    sequence(:subdomain) { |n| "subdomain#{n}" }
-    association :owner, factory: :user
-  end
+	sequence(:subdomain) { |n| "subdomain#{n}" }
+  
+  	factory :account do
+    	sequence(:subdomain) { |n| "subdomain#{n}" }
+    	association :owner, factory: :user
+
+    	factory :account_with_schema do
+      		after(:build) do |account|
+        		Apartment::Tenant.create(account.subdomain)
+        		Apartment::Tenant.switch(account.subdomain)
+      		end
+      		after(:create) do |account|
+        		Apartment::Tenant.reset
+      		end
+    	end
+  	end
 end
 

@@ -1,13 +1,30 @@
+class SubdomainPresent
+  def self.matches?(request)
+    request.subdomain.present?
+  end
+end
+
+class SubdomainBlank
+  def self.matches?(request)
+    request.subdomain.blank?
+  end
+end
+
 Rails.application.routes.draw do
-  devise_for :users
+  constraints(SubdomainPresent) do
+    root 'projects#index', as: :subdomain_root
+    devise_for :users
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  constraints(SubdomainBlank) do
     root 'welcome#index'
-    resources :account
+    resources :accounts, only: [:new, :create]
+  end
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
