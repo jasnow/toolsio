@@ -1,6 +1,7 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe 'user authentication' do
+	# the user use associated with the account 
 	let(:user) { build(:user) }
   	let!(:account) { create(:account_with_schema, owner: user) }
 
@@ -36,10 +37,4 @@ describe 'user authentication' do
 		expect(page).to have_content('Sign out in successfully')
 	end	
 end
-
-def sign_user_in(user, opts={})
-	visit new_user_session_path
-	fill_in 'Email', with: user.email 
-	fill_in 'Password', with: user.password
-	click_button 'Sign in'
-end		
+	

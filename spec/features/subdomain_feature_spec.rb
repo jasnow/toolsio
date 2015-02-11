@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'subdomains' do
   let!(:account) { create(:account_with_schema) }
@@ -17,4 +17,4 @@ describe 'subdomains' do
     visit root_url(subdomain: account.subdomain)
     expect(page).to have_content 'sign in or sign up before continuing.'
   end
-end§
+end

@@ -12,6 +12,8 @@ def drop_schemas
   end
 end
 
+# added here cos we'r using this macro in multiple spec files, 
+# eventhough it isn't related with the above macro we can still keep it here
 def sign_user_in(user, opts={})
   visit new_user_session_url(subdomain: opts[:subdomain])
   fill_in 'Email', with: user.email

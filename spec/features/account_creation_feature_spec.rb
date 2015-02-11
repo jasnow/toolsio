@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'account creation' do
-    let(:subdomain) { FactoryGirl.generate(:subdomain) }
+  let(:subdomain) { FactoryGirl.generate(:subdomain) }
   before(:each) { sign_up(subdomain) }
 
   it 'allows user to create account' do
@@ -36,6 +36,7 @@ describe 'account creation' do
     fill_in 'Second Name', with: 'Hailemariam'
     fill_in 'Email', with: 'birhanu@gmail.com'
     fill_in 'Password', with: 'pw'
+    #binding.pry // inserts a breakpoint here
     fill_in 'Password confirmation', with: 'pw'
     fill_in 'Subdomain', with: subdomain
     click_button 'Create Account'
