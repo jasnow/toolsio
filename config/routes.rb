@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   constraints(SubdomainPresent) do
     root 'projects#index', as: :subdomain_root
     devise_for :users
+    resources :users, only: :index
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
