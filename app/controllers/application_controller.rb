@@ -4,8 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :load_schema, :authenticate_user!, :set_mailer_host
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  protected 
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:accept_invitation).concat([:first_name, :second_name])  
+  end
 
   private
+
   def load_schema
     Apartment::Tenant.switch('public')
     return unless request.subdomain.present?
