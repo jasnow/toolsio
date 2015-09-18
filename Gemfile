@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 source 'http://gems.github.com'
 ruby '2.2.0'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 gem 'pg'
@@ -13,6 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'slim-rails'
 
 gem 'devise'
@@ -36,4 +36,5 @@ group :development, :test do
 	gem 'shoulda-matchers'
 	gem 'letter_opener'
 	gem 'email_spec'
+	gem 'better_errors'
 end
