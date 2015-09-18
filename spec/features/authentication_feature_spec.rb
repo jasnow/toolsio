@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'user authentication' do
 	# the user use associated with the account 
 	let(:user) { build(:user) }
-  	let!(:account) { create(:account_with_schema, owner: user) }
+  let!(:account) { create(:account_with_schema, owner: user) }
 
 	it 'allows signin with valid credentials' do
 		sign_user_in(user, subdomain: account.subdomain)

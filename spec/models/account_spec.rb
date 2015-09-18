@@ -16,7 +16,7 @@ RSpec.describe Account, :type => :model do
   		
   	it 'should validate case insensitive uniqueness' do
 	    create(:account, subdomain: 'Test')
-	      expect(build(:account, subdomain: 'test')).to_not be_valid
+	    expect(build(:account, subdomain: 'test')).to_not be_valid
 	  end
 
   	#	it { should validate_presence_of :email }
