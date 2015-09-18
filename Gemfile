@@ -4,13 +4,16 @@ ruby '2.2.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 gem 'pg'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+
+gem 'turbolinks'
+gem 'slim-rails'
 
 gem 'devise', '~> 3.4.0'
 gem 'devise_invitable', '~> 1.3.4'
