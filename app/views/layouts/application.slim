@@ -27,8 +27,8 @@ html lang="en"
 
     section.container
       = flash_messages if show_layout_flash? 
-    	#flash.each do |name, msg| 
-    		#= content_tag :div, msg, :id = "flash_#{name}"  
+    	/flash.each do |name, msg| 
+    		/= content_tag :div, msg, :id = "flash_#{name}"  
 
       .row
         = yield 
