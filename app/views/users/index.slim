@@ -1,0 +1,25 @@
+.col-md-8.col-md-offset-2
+	h2 Authorized user
+	.panel.panel-default
+		.panel-body
+			table.table.table-striped
+				thead
+					tr
+						th First name
+						th Second name
+						th Email
+						th Status
+				tbody>
+					= @users.each do |user| 
+						tr
+							td> = user.first_name 
+							td> = user.second_name 
+							td> = user.email 
+							td> = user_status(user) 
+			
+			h3.extra-margin-top Invite User
+
+			= simple_form_for(User.new, url: user_invitation_path,
+					html: { class: 'form-inline'}) do |f| 
+				= f.input :email, placeholder: 'Email', label: false 
+				= f.button :submit, 'Invite User', class: 'btn-primary' 

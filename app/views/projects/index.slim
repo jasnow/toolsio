@@ -1,0 +1,15 @@
+.col-md-12
+	@projects.each do |project| 
+	h3
+		= project.name 
+		small = project.client 
+		.pull-right
+			= link_to edit_project_path(project), class: "icon-link" do 
+				small
+					i.glyphicon.glyphicon-cog
+			small
+				i.glyphicon.glyphicon-plus-sign
+
+	ul.list-group
+		li.list-group-item No entries yet!
+		
