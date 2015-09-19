@@ -26,6 +26,7 @@ gem 'autoprefixer-rails'
 gem 'simple_form'
 
 group :development, :test do
+	gem 'pry-remote'
 	gem 'guard'
 	gem 'guard-livereload'
 	gem 'guard-rspec'

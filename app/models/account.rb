@@ -9,6 +9,7 @@ class Account < ActiveRecord::Base
 		format: { with: /\A[\w\-]+\Z/i, message: 'contains invalid characters' }, 
 		exclusion: { in: RESTRICTED_SUBDOMAINS, message: 'restricted' }
 
+	#Temporary solution to resolve capybara's ElementNotFound error 	
 	accepts_nested_attributes_for :owner
 
 	before_validation :downcase_subdomain
