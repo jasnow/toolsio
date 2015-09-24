@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_schema, :authenticate_user!, :set_mailer_host
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-  protected 
-
+  protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:accept_invitation).concat([:first_name, :second_name])  
   end
