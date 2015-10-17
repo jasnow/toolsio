@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'invitations' do
   let!(:account) { create(:account_with_schema) }
-  let(:user) { account.user }
+  let(:user) { account.owner }
 
   before do 
   	set_subdomain(account.subdomain) 

@@ -4,7 +4,7 @@
 	= f.input :name 
 	= f.input :client 
 
-	 if @project.persisted? 
+	- if @project.persisted? 
 		= f.input :archived, as: :boolean 
 	
 	= f.button :submit, class: 'btn-primary' 		

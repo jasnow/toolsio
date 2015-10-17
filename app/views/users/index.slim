@@ -9,13 +9,13 @@
 						th Second name
 						th Email
 						th Status
-				tbody>
-					= @users.each do |user| 
+				tbody
+					- @users.each do |user| 
 						tr
-							td> = user.first_name 
-							td> = user.second_name 
-							td> = user.email 
-							td> = user_status(user) 
+							td = user.first_name 
+							td = user.second_name 
+							td = user.email 
+							td = user_status(user) 
 			
 			h3.extra-margin-top Invite User
 
