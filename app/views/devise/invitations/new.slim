@@ -2,8 +2,9 @@
   .panel-body
     h2 Send Invitation
 
-    = simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :post } do |f| 
-        = f.input :email 
-
-        = f.button :submit, "Create Account", class: 'btn-primary' 
-     end 
+    = simple_form_for resource, :as => resource_name, 
+                                :url => invitation_path(resource_name), 
+                                :html => { :method => :post } do |f| 
+      = f.input :email
+      = f.button :submit, "Create Account", class: 'btn-primary' 
+  
