@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     root 'projects#index', as: :subdomain_root
     devise_for :users
     resources :users, only: :index
-    resources :projects, except: [:show, :destroy]
+    resources :projects, except: [:index, :show, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
