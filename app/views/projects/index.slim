@@ -1,16 +1,18 @@
 .col-md-12
-  - @projects.each do |project| 
-    h3 
-      = project.name 
-      small = project.client 
+  - @projects.each do |project|
+    h3
+      = project.name
+      small = project.client
       .pull-right
-        = link_to edit_project_path(project), class: "icon-link" do 
-          small
-            i.glyphicon.glyphicon-cog
-        end     
-        small
-          i.glyphicon.glyphicon-plus-sign
+        .form-inline
+          .form-group
+            = link_to edit_project_path(project), class: "icon-link" do
+              small
+                i.glyphicon.glyphicon-cog
+          .form-group
+            small
+              i.glyphicon.glyphicon-plus-sign
 
     ul.list-group
-      li.list-group-item No entries yet!
-      
+      li.list-group-item = I18n.t('page.project.no_entries')
+

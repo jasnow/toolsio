@@ -20,4 +20,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  button:
+    save: Save
+    cancel: Cancel
+    next: Next
+    ok: OK
+    create_account: Create Account
+    invite_user: Invite user
+    sign_out: Sign out
+    sign_in: Sign in
+  navigation:
+    time_tracker: TimeTracker
+  form:
+    create_account: Create an Account
+    forgot_password: Forgot your password?
+  flash:
+    notice:
+      project_created: "Project created!"
+      project_updated: "Project updated!"
+    error:
+  page:
+    landing:
+      time_tracker: Time Tracker
+      slogan: Track your time with the most awesome time tracking app ever
+    project:
+      headline: New project
+      update_project: Update Project
+      no_entries: No entries yet!
+    users:
+      headline: Users
+      authorized_user: Authorized user
