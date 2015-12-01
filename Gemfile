@@ -24,6 +24,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 
 gem 'simple_form'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry-remote'
