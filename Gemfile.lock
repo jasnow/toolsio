@@ -282,7 +282,7 @@ DEPENDENCIES
   pry-remote
   rails (= 4.2.2)
   rspec-rails
-  sass-rails (~> 5.0)
+  sass-rails (>= 5.0)
   shoulda-matchers
   simple_form
   slim-rails
