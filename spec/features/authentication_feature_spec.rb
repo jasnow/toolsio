@@ -1,19 +1,20 @@
 require 'rails_helper'
 
 describe 'user authentication' do
-  # the user use associated with the account 
+  # the user use associated with the account
   let(:user) { build(:user) }
   let!(:account) { create(:account_with_schema, owner: user) }
 
   it 'allows signin with valid credentials' do
+    #binding.pry
     sign_user_in(user, subdomain: account.subdomain)
     expect(page).to have_content('Signed in successfully')
-  end 
+  end
 
   it 'does not allow signin with valid credentials' do
     sign_user_in(user, subdomain: account.subdomain, password: 'wrong pw')
     expect(page).to have_content('Invalid email or password')
-  end 
+  end
 
   it 'does not allow user to sign in unless on subdomain' do
     expect { visit new_user_session_path }.to raise_error ActionController::RoutingError
@@ -27,7 +28,7 @@ describe 'user authentication' do
     expect(page).to have_content('Signed in successfully')
 
     sign_user_in(user2, subdomain: account.subdomain)
-    expect(page).to have_content('Invalid email or password')  
+    expect(page).to have_content('Invalid email or password')
   end
 
   it 'allows user to sign out' do
@@ -35,6 +36,5 @@ describe 'user authentication' do
 
     click_link 'Sign out'
     expect(page).to have_content('Sign out in successfully')
-  end 
+  end
 end
-  

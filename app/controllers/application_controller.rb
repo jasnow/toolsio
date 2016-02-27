@@ -8,14 +8,14 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:accept_invitation).concat([:first_name, :second_name])  
+    devise_parameter_sanitizer.for(:accept_invitation).concat([:first_name, :second_name])
   end
 
   private
   def load_schema
     Apartment::Tenant.switch!('public')
     return unless request.subdomain.present?
-   
+
     if current_account
       Apartment::Tenant.switch!(current_account.subdomain)
     else
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path
   end
-  
+
   # Overight after invite path
   def after_invite_path_for(resource)
     users_path
