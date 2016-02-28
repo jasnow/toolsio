@@ -2,13 +2,12 @@
   .panel-body
     h2 Create an Account
 
-    = simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| 
-      = f.input :invitation_token, as: :hidden 
-      = f.input :first_name 
-      = f.input :second_name 
-      = f.input :password 
-      = f.input :password_confirmation 
+    = simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f|
+      = f.input :invitation_token, as: :hidden
+      = f.input :first_name
+      = f.input :second_name
+      = f.input :password
+      = f.input :password_confirmation
 
-      = f.button :submit, "Create Account", class: 'btn-primary' 
-     end 
-  
+      = f.button :submit, "Create Account", class: 'btn-primary'
+
