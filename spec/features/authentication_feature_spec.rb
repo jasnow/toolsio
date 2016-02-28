@@ -6,7 +6,6 @@ describe 'user authentication' do
   let!(:account) { create(:account_with_schema, owner: user) }
 
   it 'allows signin with valid credentials' do
-    #binding.pry
     sign_user_in(user, subdomain: account.subdomain)
     expect(page).to have_content('Signed in successfully')
   end
