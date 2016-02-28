@@ -32,11 +32,13 @@ describe 'account creation' do
     visit root_url(subdomain: false)
     click_link 'Create Account'
 
-    fill_in 'First Name', with: 'Birhanu'
-    fill_in 'Second Name', with: 'Hailemariam'
+    #binding.pry #inserts a breakpoint here
+    fill_in 'First name', with: 'Birhanu'
+    fill_in 'Second name', with: 'Hailemariam'
     fill_in 'Email', with: 'birhanu@gmail.com'
-    fill_in 'Password', with: 'pw'
-    #binding.pry // inserts a breakpoint here
+    within('.account_owner_password') do
+      fill_in 'Password', with: 'pw'
+    end
     fill_in 'Password confirmation', with: 'pw'
     fill_in 'Subdomain', with: subdomain
     click_button 'Create Account'
