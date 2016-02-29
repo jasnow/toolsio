@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe 'invitations' do
   let!(:account) { create(:account_with_schema) }
-  let(:user) { account.user }
+  let(:user) { account.owner }
 
-  before do 
-  	set_subdomain(account.subdomain) 
+  before do
+  	set_subdomain(account.subdomain)
   	sign_user_in(user)
   end
 
@@ -19,7 +19,7 @@ describe 'invitations' do
   	click_button "Create Project"
 
   	expect(page).to have_text "Project created!"
-  	expect(page).to have_text "A greate project"
+  	expect(page).to have_text "A great project"
   end
 
   it "displays project validations" do
@@ -32,12 +32,12 @@ describe 'invitations' do
 
   it "allows projects to be edited" do
   	project = create(:project)
-  	
+
   	visit root_path
   	click_edit_project_button project.name
 
   	fill_in "Name", with: "A new name"
-  	check "Archived" 
+  	check "Archived"
   	click_button "Update Project"
 
   	expect(page).to have_text "Project updated!"
@@ -46,7 +46,7 @@ describe 'invitations' do
 
   def click_edit_project_button(project_name)
   	within find("h3", text: project_name) do
-  		page.first("a").click 
-  	end	
+  		page.first("a").click
+  	end
   end
-end  
+end

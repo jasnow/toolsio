@@ -23,5 +23,5 @@ class AccountsController < ApplicationController
     params.require(:account).permit(:subdomain, owner_attributes: [:first_name, :second_name,
       :email, :password, :password_confirmation])
   end
-    
+
 end
