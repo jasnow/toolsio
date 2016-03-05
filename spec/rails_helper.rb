@@ -24,10 +24,12 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
+  # Before each spec run, just to insure consistency between specs
   config.before(:each) do
     DatabaseCleaner.start
   end
 
+  # After each spec run, just to insure consistency between specs
   config.after(:each) do
     DatabaseCleaner.clean
     Apartment::Tenant.reset
