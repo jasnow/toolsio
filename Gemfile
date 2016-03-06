@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'http://gems.github.com'
 ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -36,7 +35,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'letter_opener'
+  gem 'mailcatcher'
   gem 'email_spec'
   gem 'better_errors'
 end

@@ -24,9 +24,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_account
-     @current_account ||= Account.find_by(subdomain: request.subdomain)
+    @current_account ||= Account.find_by(subdomain: request.subdomain)
   end
-  # In order to access this function from our views and helps
+  # In order to access this function from our views and helpers
   helper_method :current_account
 
   def set_mailer_host
