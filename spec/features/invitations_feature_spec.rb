@@ -21,18 +21,18 @@ describe 'invitations' do
    	expect(page).to have_content user.first_name
     expect(page).to have_content user.second_name
   	expect(page).to have_content user.email
-  	expect(page).to have_css '.glyphicon-ok'
+  	expect(page).to have_selector '.glyphicon-ok'
   end
 
   describe 'when user is invited' do
     before do
-      fill_in 'Email', with: 'birhanuh@bizdesk.com'
+      fill_in 'Email', with: 'birhanu@bizdesc.com'
       click_button 'Invite User'
     end
 
     it 'shows invitation when user is invited' do
     	expect(page).to have_content 'invitation email has been sent'
-    	expect(page).to have_content 'birhanuh@bizdesk.com'
+    	expect(page).to have_content 'birhanu@bizdesc.com'
     	expect(page).to have_content 'Invitation Pending'
     end
 
@@ -40,23 +40,24 @@ describe 'invitations' do
       before do
         click_link 'Sign out'
 
-        open_email 'birhanuh@bizdesk.com'
+        open_email 'birhanu@bizdesc.com'
         visit_in_email 'Accept invitation'
 
-        fill_in 'First name', with: 'birhanuh'
+        fill_in 'First name', with: 'Birhanu test'
         fill_in 'Second name', with: 'Hailemariam'
+        fill_in 'Password', with: 'pw'
         fill_in 'Password confirmation', with: 'pw'
         click_button 'Create Account'
       end
 
       it 'confirms account creation' do
-        expect(page).to have_content 'Your account was created successfuly'
+        expect(page).to have_content 'Your account was created successfully'
       end
 
       it 'shows a check mark on the user page' do
         visit users_path
-        within('tr', text: 'Birhanu') do
-          expect(page).to have_content '.glyphicon-ok'
+        within('tr', text: 'Birhanu test') do
+          expect(page).to have_selector '.glyphicon-ok'
         end
       end
     end
