@@ -34,6 +34,6 @@ describe 'user authentication' do
     sign_user_in(user, subdomain: account.subdomain)
 
     click_link 'Sign out'
-    expect(page).to have_content('Sign out in successfully')
+    expect(page).to have_content('Signed out successfully')
   end
 end
