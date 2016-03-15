@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     devise_for :users
     resources :users, only: :index
     resources :projects, except: [:index, :show, :destroy]
+    resources :invoices
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
