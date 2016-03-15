@@ -24,6 +24,9 @@ en:
     save: Save
     cancel: Cancel
     next: Next
+    delete: Delete
+    show: Show 
+    edit: Edit
     ok: OK
     create_account: Create Account
     invite_user: Invite user
@@ -39,6 +42,8 @@ en:
       project_created: "Project created!"
       project_updated: "Project updated!"
     error:
+  confirmation:
+    are_you_sure: Are you sure?
   page:
     landing:
       time_tracker: Time Tracker
@@ -47,6 +52,13 @@ en:
       headline: New project
       update_project: Update Project
       no_entries: No entries yet!
-    users:
+    user:
       headline: Users
       authorized_user: Authorized user
+    invoice:
+      headline: Invoices  
+      company: Company
+      date: Date
+      salesperson: Salesperosn 
+      tax: tax
+      new_invoice: New invoice
