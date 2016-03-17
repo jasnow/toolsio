@@ -25,6 +25,8 @@ gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'rails_12factor'
 
+gem 'font-awesome-sass'
+
 group :development, :test do
   gem 'pry-remote'
   gem 'guard'

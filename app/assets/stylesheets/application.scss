@@ -1,5 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Font awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Local styles
 @import "layout";
 @import "authentication";
 @import "page";
