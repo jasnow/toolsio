@@ -29,3 +29,12 @@ abbr, accronym {
 span .fa {
   margin-right: 5px;
 }
+
+
+/* Small devices (tablets, 768px) */
+@media (min-width: $screen-sm-min) {
+  .form-inline label.datetime {
+    display: block;
+    margin-bottom: 0; 
+  }  
+}
