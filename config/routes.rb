@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   constraints(SubdomainBlank) do
     root 'welcome#index'
+    get 'welcome/about'
+    get 'welcome/contact'
+    get 'welcome/faq'
     resources :accounts, only: [:new, :create]
   end
   
