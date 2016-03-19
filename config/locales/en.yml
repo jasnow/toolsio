@@ -41,6 +41,9 @@ en:
     notice:
       project_created: "Project created!"
       project_updated: "Project updated!"
+      invoice_created: "Invoice created!"
+      invoice_updated: "Invoice updated!"
+      invoice_deleted: "Invoice deleted"
     error:
   confirmation:
     are_you_sure: Are you sure?
@@ -61,4 +64,5 @@ en:
       date: Date
       salesperson: Salesperosn 
       tax: tax
-      new_invoice: New invoice
+      new_invoice: New Invoice
+      create_invoice: Create Invoice
