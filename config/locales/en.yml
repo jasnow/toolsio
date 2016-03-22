@@ -50,3 +50,14 @@ en:
     users:
       headline: Users
       authorized_user: Authorized user
+    invoice:
+      headline: Invoices  
+      company: Company
+      date: Date
+      salesperson: Salesperosn 
+      tax: tax
+      new_invoice: New Invoice
+      create_invoice: Create Invoice
+    setting:
+      headline: Setting
+        
