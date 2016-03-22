@@ -1,5 +1,6 @@
 .row
   .col-md-12
+    h1 = I18n.t('page.invoice.headline')
     table.table.table-striped
       thead
         tr
@@ -19,20 +20,17 @@
             td = invoice.tax
             td 
               = link_to invoice, class: 'btn btn-default btn-sm' do
-                span 
-                  = icon('eye')
-                  = I18n.t('button.show')
+                = icon('eye')
+                span = I18n.t('button.show')
               
             td 
               = link_to edit_invoice_path(invoice), class: 'btn btn-success btn-sm' do
-                span
-                  = icon('pencil-square-o white')
-                  = I18n.t('button.edit') 
+                = icon('pencil-square-o white')
+                span = I18n.t('button.edit') 
 
             td 
               = link_to invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('form.are_you_sure') }     
-                span
-                  = icon('trash')
-                  = I18n.t('button.delete')
+                = icon('trash')
+                span = I18n.t('button.delete')
 
     = link_to I18n.t('page.invoice.new_invoice'), new_invoice_path, class: 'btn btn-primary'  

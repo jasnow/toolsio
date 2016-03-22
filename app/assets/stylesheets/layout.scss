@@ -25,3 +25,20 @@ body {
 abbr, accronym { 
 	border-bottom: 0px !important; 
 } 
+
+a .fa {
+  margin-right: 3px;
+}
+
+.navbar-inverse {
+  background-color: #0a0a0a;
+}    
+
+/* Small devices (tablets, 768px) */
+@media (min-width: $screen-sm-min) {
+  .form-inline label.datetime {
+    display: block;
+    margin-bottom: 0; 
+  }  
+}
+

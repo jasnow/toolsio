@@ -1,0 +1,30 @@
+// Input fields
+.form-inline {
+  margin-bottom: 15px;
+}
+
+// Buttons
+
+.btn-primary {
+  background-color: #3b83a9;
+  border-color: #2e6683;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-top: 1px solid #549dc3;
+  padding: 8px 14px;
+  &:hover, &:focus {
+    background-color: #2e6683;
+  }
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border-color: #C92918;
+  &:hover {
+    background-color: #C92918;
+    border-color: #A41607;
+  }  
+}
