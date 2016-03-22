@@ -66,3 +66,6 @@ en:
       tax: tax
       new_invoice: New Invoice
       create_invoice: Create Invoice
+    setting:
+      headline: Setting
+        

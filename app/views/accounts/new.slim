@@ -1,18 +1,19 @@
-.col-md-6.col-md-offset-3.panel.panel-default
-  .panel-body
-    h2 = I18n.t('form.create_account')
+.row
+  .col-md-6.col-md-offset-3.panel.panel-default
+    .panel-body
+      h2 = I18n.t('form.create_account')
 
-    = simple_form_for @account, :url => {:action => 'create'} do |f|
-      = f.fields_for :owner do |o|
-        = o.input :first_name
-        = o.input :second_name
-        = o.input :email, :required => true
-        = o.input :password, :required => true
-        = o.input :password_confirmation, :required => true
+      = simple_form_for @account, :url => {:action => 'create'} do |f|
+        = f.fields_for :owner do |o|
+          = o.input :first_name
+          = o.input :second_name
+          = o.input :email, :required => true
+          = o.input :password, :required => true
+          = o.input :password_confirmation, :required => true
 
-      = f.input :subdomain do
-        .input-group
-          = f.input_field :subdomain, class: 'form-control'
-          span.input-group-addon .timetracker.dev
+        = f.input :subdomain do
+          .input-group
+            = f.input_field :subdomain, class: 'form-control'
+            span.input-group-addon .timetracker.dev
 
-      = f.button :submit, class: 'btn-primary'
+        = f.button :submit, class: 'btn-primary'

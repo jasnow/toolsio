@@ -14,27 +14,27 @@ html lang="en"
     = csrf_meta_tags
   body
     header
-      .container
-        nav.navbar.navbar-default
+      nav.navbar.navbar-inverse.navbar-fixed-top
+        .container
           .navbar-header
             = link_to I18n.t('navigation.time_tracker'), root_path, class: 'navbar-brand'
-
+          #navbar.navbar-collapase.collapse  
           - if user_signed_in?
             .pull-right.right-buttons
       			   = link_to I18n.t('button.sign_out'), destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn'
-            ul.nav.navbar-nav.navbar-right
+            ul.nav.navbar-nav
               li = link_to I18n.t('page.invoice.headline'), invoices_path
               li = link_to I18n.t('page.project.headline'), new_project_path
               li = link_to I18n.t('page.user.headline'), users_path
-
+            ul.nav.navbar-nav.navbar-right
+              li = link_to I18n.t('page.setting.headline'), '#'
     section
       .container
         = flash_messages if show_layout_flash?
       	/flash.each do |name, msg|
       		/= content_tag :div, msg, :id = "flash_#{name}"
 
-        .row
-          = yield
+        = yield
 
     footer
       .container
