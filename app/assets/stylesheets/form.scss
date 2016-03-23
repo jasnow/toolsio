@@ -14,17 +14,16 @@
   -moz-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-top: 1px solid #549dc3;
-  padding: 8px 14px;
   &:hover, &:focus {
     background-color: #2e6683;
   }
 }
 
 .btn-danger {
-  background-color: #e74c3c;
-  border-color: #C92918;
+  background-color: #c0392b;
+  border-color: #9B2114;
   &:hover {
-    background-color: #C92918;
-    border-color: #A41607;
+    background-color: #9B2114;
+    border-color: #760B00;
   }  
 }

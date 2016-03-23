@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 #flash_notice {
@@ -18,16 +18,20 @@ body {
 }
 
 .navbar .right-buttons {
-	margin-right: 15px;
-	margin-left: 25px;
+  margin-left: 20px;
 }
 
 abbr, accronym { 
 	border-bottom: 0px !important; 
 } 
 
+nav .container {
+  width: 100%;  
+}
+
 a .fa {
   margin-right: 3px;
+  margin-left: 3px;
 }
 
 .navbar-inverse {
@@ -42,3 +46,23 @@ a .fa {
   }  
 }
 
+<<<<<<< HEAD
+=======
+@media (min-width: 768px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1370px;
+  }
+}
+>>>>>>> bf0a329... Redefine container width for diffrient medias.
