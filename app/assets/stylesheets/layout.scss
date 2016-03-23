@@ -1,5 +1,6 @@
 body {
   padding-top: 70px;
+  color: #666666;
 }
 
 #flash_notice {
@@ -31,12 +32,15 @@ nav .container {
 
 a .fa {
   margin-right: 3px;
-  margin-left: 3px;
 }
 
 .navbar-inverse {
   background-color: #0a0a0a;
 }    
+
+.panel-default {
+  border-color: $dark-grey;
+}
 
 /* Small devices (tablets, 768px) */
 @media (min-width: $screen-sm-min) {
