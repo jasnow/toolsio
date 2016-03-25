@@ -25,16 +25,27 @@ p {
 }
 
 // Navabars
+.navbar-default .navbar-brand {
+  color: $white-turquoise;
+  &:hover, &:focus {
+    color: $white-turquoise;
+  }
+}
+
 .navbar .right-buttons {
   margin-left: 20px;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: $xxx-light-turquoise;
+  color: $white;
+  text-transform: uppercase;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: $white;
+.navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:focus {
+  background: $dark-turquoise;
+  > a {
+    color: $white;
+  }  
 }
 
 abbr, accronym { 
@@ -55,7 +66,7 @@ a .fa {
 }   
 
 .panel-default {
-  border-color: $dark-grey;
+  border-color: $light-grey;
 }
 
 /* Small devices (tablets, 768px) */

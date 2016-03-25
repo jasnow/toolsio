@@ -4,8 +4,8 @@
 }
 
 .form-control {
-  border: 1px solid $medium-grey;  
-  background-color: $dark-medium-grey;
+  border: 1px solid $dark-light-grey;  
+  background-color: $light-grey;
   border-radius: 2px;
   box-shadow: none;
   &:focus {
@@ -25,7 +25,7 @@
   transition: background-color 300ms ease-out;
   &:hover, &:focus {
     background-color: $dark-turquoise;
-    border: $darker-turquoise;
+    border-color: $dark-turquoise;
   }
 }
 
