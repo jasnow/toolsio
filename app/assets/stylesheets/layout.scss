@@ -1,6 +1,12 @@
 body {
   padding-top: 70px;
-  color: #666666;
+  color: $body-color;
+}
+
+p {
+  font-family: "Open Sans","HelveticaNeue","Helvetica","Arial",sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1em;
 }
 
 #flash_notice {
@@ -18,8 +24,17 @@ body {
 	@extend .alert-warning;
 }
 
+// Navabars
 .navbar .right-buttons {
   margin-left: 20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $xxx-light-mint;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $white;
 }
 
 abbr, accronym { 
@@ -34,9 +49,10 @@ a .fa {
   margin-right: 3px;
 }
 
-.navbar-inverse {
-  background-color: #0a0a0a;
-}    
+.navbar-default {
+  background-color: $turquoise;
+  border-color: transparent;
+}   
 
 .panel-default {
   border-color: $dark-grey;

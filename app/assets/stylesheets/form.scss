@@ -9,31 +9,40 @@
   border-radius: 2px;
   box-shadow: none;
   &:focus {
-    border-color: $primary-color;
+    border-color: $turquoise;
     box-shadow: none;
   }
 }
 
 // Buttons
 .btn-primary {
-  background-color: $primary-color;
-  border-color: #2e6683;
+  background-color: $turquoise;
+  border-color: $dark-turquoise;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
-  border-top: 1px solid #549dc3;
   &:hover, &:focus {
-    background-color: #2e6683;
+    background-color: $dark-turquoise;
+    border: $x-dark-darker-mint;
   }
 }
 
 .btn-danger {
-  background-color: #c0392b;
-  border-color: #9B2114;
-  &:hover {
-    background-color: #9B2114;
-    border-color: #760B00;
+  background-color: $red;
+  border-color: $dark-red;
+  &:hover, &.focus {
+    background-color: $dark-red;
+    border-color: $x-dark-red;
+  }  
+}
+
+.btn-success {
+  background: $green;
+  border-color: $dark-green;
+  &:hover, &.focus {
+    background-color: $dark-green;
+    border-color: $x-dark-green;
   }  
 }
