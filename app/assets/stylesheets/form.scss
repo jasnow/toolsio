@@ -4,8 +4,8 @@
 }
 
 .form-control {
-  border: 1px solid $dark-grey;  
-  background-color: $main-grey;
+  border: 1px solid $medium-grey;  
+  background-color: $dark-medium-grey;
   border-radius: 2px;
   box-shadow: none;
   &:focus {
@@ -17,7 +17,7 @@
 // Buttons
 .btn-primary {
   background-color: $turquoise;
-  border-color: $dark-turquoise;
+  border-color: $turquoise;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   -webkit-transition: background-color 300ms ease-out;
@@ -25,24 +25,24 @@
   transition: background-color 300ms ease-out;
   &:hover, &:focus {
     background-color: $dark-turquoise;
-    border: $x-dark-darker-mint;
+    border: $darker-turquoise;
   }
 }
 
 .btn-danger {
   background-color: $red;
-  border-color: $dark-red;
+  border-color: $red;
   &:hover, &.focus {
     background-color: $dark-red;
-    border-color: $x-dark-red;
+    border-color: $dark-red;
   }  
 }
 
 .btn-success {
-  background: $green;
-  border-color: $dark-green;
+  background: $grass;
+  border-color: $grass;
   &:hover, &.focus {
-    background-color: $dark-green;
-    border-color: $x-dark-green;
+    background-color: $dark-grass;
+    border-color: $dark-grass;
   }  
 }
