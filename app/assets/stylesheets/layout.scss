@@ -1,11 +1,22 @@
 body {
   padding-top: 70px;
   color: $body-color;
+  margin-bottom: 60px;
 }
 
 p {
   font-family: "Open Sans","HelveticaNeue","Helvetica","Arial",sans-serif;
   line-height: 1.2;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  background-color: $dark-mid-night-blue;
+  color: $medium-grey;
 }
 
 #flash_notice {
