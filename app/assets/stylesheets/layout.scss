@@ -29,14 +29,15 @@ p {
 
 // Flash 
 .alert-success {
-  color: $light-grass;
+  color: $grass;
   background: $white-grass;
-  border: $xxx-light-grass; 
+  border-color: $x-light-grass; 
 }
 
 .alert-danger {
-  background: $light-red;
-  border: $red; 
+  color: $red;
+  background: $white-red;
+  border-color: $x-light-red; 
 }
 
 #flash_notice {
