@@ -9,11 +9,11 @@ nav.navbar.navbar-default.navbar-fixed-top
           = icon ('sign-out')
           span = I18n.t('button.sign_out')
       ul.nav.navbar-nav
-        li class = ('active' if controller_name?('invoices')) 
+        li class = ('active' if current_page? invoices_path) 
           = link_to I18n.t('page.invoice.headline'), invoices_path
-        li class = ('active' if controller_name?('projects'))
+        li class = ('active' if current_page? new_project_path)
           = link_to I18n.t('page.project.headline'), new_project_path
-        li class = ('active' if controller_name?('users'))
+        li class = ('active' if current_page? users_path)
           = link_to I18n.t('page.user.headline'), users_path
       ul.nav.navbar-nav.navbar-right
         li = link_to I18n.t('page.setting.headline'), '#'

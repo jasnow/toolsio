@@ -47,11 +47,23 @@
   }  
 }
 
-.btn-default {
+.btn-info {
   background: $dark-light-grey;
   border-color: $dark-light-grey;
+  color: $black;
   &:hover, &.focus {
     background-color: $light-medium-grey;
     border-color: $light-medium-grey;
+    color: $black;
+  }  
+}
+
+.btn-white {
+  @extend .btn-default;
+  background: $white;
+  border-color: $white;
+  &:hover, &.focus {
+    background-color: $light-light-grey;
+    border-color: $light-light-grey;
   }  
 }

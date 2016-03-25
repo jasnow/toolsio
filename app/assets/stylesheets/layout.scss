@@ -56,6 +56,15 @@ p {
 	@extend .alert-warning;
 }
 
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: $red;
+}
+
+.has-error .form-control {
+  border-color: $red;
+  box-shadow: none;
+}
+
 // Navabars
 .navbar-default .navbar-brand {
   color: $white-turquoise;
@@ -93,17 +102,50 @@ nav .container {
   width: 100%;  
 }
 
-a .fa {
-  margin-right: 3px;
-}
-
 .navbar-default {
   background-color: $turquoise;
   border-color: transparent;
 }   
 
+// Font awesome
+a .fa {
+  margin-right: 3px;
+}
+
+// Panel
 .panel-default {
-  border-color: $light-grey;
+  border-color: $dark-light-grey;
+}
+
+.panel-default.light-grey {
+  background-color: $light-grey;
+  border-color: $dark-light-grey;
+}
+
+// Table
+.table > thead {
+  background-color: $mid-night-blue;
+  color: $light-grey;
+}
+
+.table > thead > tr > th {
+  border-bottom: 2px solid $light-turquoise;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: $dark-light-grey;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: $light-grey;
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  border-top: 1px solid $light-medium-grey;
+}
+
+th, td {
+  text-align: center;
 }
 
 /* Small devices (tablets, 768px) */

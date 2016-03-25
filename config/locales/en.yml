@@ -55,7 +55,7 @@ en:
       company: Company
       date: Date
       salesperson: Salesperosn 
-      tax: tax
+      tax: Tax
       new_invoice: New Invoice
       create_invoice: Create Invoice
     setting:
