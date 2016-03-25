@@ -12,4 +12,8 @@ module LayoutHelper
   def show_layout_flash?
     @layout_flash.nil? ? true : @layout_flash
   end
+
+  def controller_name?(controller_name)
+    return true if params[:controller] == controller_name
+  end  
 end

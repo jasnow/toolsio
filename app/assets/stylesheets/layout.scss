@@ -6,7 +6,6 @@ body {
 p {
   font-family: "Open Sans","HelveticaNeue","Helvetica","Arial",sans-serif;
   line-height: 1.2;
-  margin-bottom: 1em;
 }
 
 #flash_notice {
@@ -42,10 +41,15 @@ p {
 }
 
 .navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:focus {
-  background: $dark-turquoise;
+  background-color: $light-mid-night-blue;
   > a {
-    color: $white;
+    color: $light-grey;
   }  
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: $light-mid-night-blue;
+  color: $light-grey;
 }
 
 abbr, accronym { 
