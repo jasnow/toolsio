@@ -1,7 +1,14 @@
 body {
   padding-top: 70px;
   color: $body-color;
-  margin-bottom: 60px;
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
 }
 
 p {
@@ -9,6 +16,7 @@ p {
   line-height: 1.2;
 }
 
+// Footer
 .footer {
   position: absolute;
   bottom: 0;
@@ -19,14 +27,28 @@ p {
   color: $medium-grey;
 }
 
+// Flash 
+.alert-success {
+  color: $light-grass;
+  background: $white-grass;
+  border: $xxx-light-grass; 
+}
+
+.alert-danger {
+  background: $light-red;
+  border: $red; 
+}
+
 #flash_notice {
-	@extend .alert;
-	@extend .alert-success;
+  @extend .alert;
+  @extend .alert-success;
+  @extend .alert-dismissible;
 }
 
 #flash_error, #flash_alert {
-	@extend .alert;
-	@extend .alert-danger;
+  @extend .alert;
+  @extend .alert-danger;
+  @extend .alert-dismissible;
 }
 
 #flash_warning {

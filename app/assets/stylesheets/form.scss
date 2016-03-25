@@ -16,16 +16,16 @@
 
 // Buttons
 .btn-primary {
-  background-color: $turquoise;
-  border-color: $turquoise;
+  background-color: $turquoise !important;
+  border-color: $turquoise !important;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   &:hover, &:focus {
-    background-color: $dark-turquoise;
-    border-color: $dark-turquoise;
+    background-color: $dark-turquoise !important;
+    border-color: $dark-turquoise !important;
   }
 }
 
