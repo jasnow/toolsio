@@ -16,6 +16,13 @@ p {
   line-height: 1.2;
 }
 
+a {
+  color: $light-turquoise;
+  &:hover, &:focus {
+    color: $dark-turquoise;
+  }  
+}
+
 // Footer
 .footer {
   position: absolute;
@@ -29,32 +36,27 @@ p {
 
 // Flash 
 .alert-success {
-  color: $grass;
+  color: $dark-grass;
   background: $white-grass;
   border-color: $x-light-grass; 
 }
 
 .alert-danger {
-  color: $red;
+  color: $dark-red;
   background: $white-red;
   border-color: $x-light-red; 
 }
 
-#flash_notice {
-  @extend .alert;
+.flash-notice {
   @extend .alert-success;
-  @extend .alert-dismissible;
 }
 
-#flash_error, #flash_alert {
-  @extend .alert;
+.flash-error, #flash-alert {
   @extend .alert-danger;
-  @extend .alert-dismissible;
 }
 
-#flash_warning {
-	@extend .alert;
-	@extend .alert-warning;
+.flash_warning {
+  @extend .alert-warning;
 }
 
 .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
@@ -157,8 +159,6 @@ th, td {
   }  
 }
 
-<<<<<<< HEAD
-=======
 @media (min-width: 768px) {
   .container {
     width: 950px;
@@ -176,4 +176,3 @@ th, td {
     width: 1370px;
   }
 }
->>>>>>> bf0a329... Redefine container width for diffrient medias.
