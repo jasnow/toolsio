@@ -4,7 +4,7 @@ html, body {
 
 body {
   padding-top: 70px;
-  color: $body-color;
+  color: $light-mid-night-blue;
 }
 
 #wrapper {
@@ -131,9 +131,13 @@ a .fa {
 }
 
 // Table
-.table > thead {
-  background-color: $mid-night-blue;
-  color: $light-grey;
+.table { 
+  border: 1px solid $light-medium-grey;
+  > thead {
+    background-color: $light-dark-grey;
+    color: $light-grey;
+    border: 1px solid $light-dark-grey;
+  }
 }
 
 .table > thead > tr > th {
@@ -141,11 +145,11 @@ a .fa {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: $dark-light-grey;
+  background-color: $light-grey;
 }
 
 .table-striped > tbody > tr:nth-of-type(even) {
-  background-color: $light-grey;
+  background-color: $white;
 }
 
 .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
