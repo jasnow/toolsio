@@ -13,7 +13,7 @@ html lang="en"
     = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    #warp
+    #wrapper
       header
         == render 'layouts/internal_page_navigation'
 
@@ -24,7 +24,7 @@ html lang="en"
         		/= content_tag :div, msg, :id = "flash_#{name}"
 
           = yield
-
-    footer.footer
+       
+    footer
       .container
         == render 'layouts/footer'
