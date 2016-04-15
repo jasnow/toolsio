@@ -13,9 +13,10 @@ html lang="en"
     = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    #wrapper
+    #wrapper class="#{controller.controller_name} #{controller.action_name}"
       header
-        == render 'layouts/internal_page_navigation'
+        - if user_signed_in?
+          == render 'layouts/internal_page_navigation'
 
       section
         .container

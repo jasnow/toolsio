@@ -17,6 +17,10 @@ module LayoutHelper
   end
 
   def controller_name?(controller_name)
-    return true if params[:controller] == controller_name
+    return true if controller.controller_name == controller_name
+  end  
+
+  def action_name?(action_name)
+    return true if controller.action_name == action_name
   end  
 end
