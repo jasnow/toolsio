@@ -23,4 +23,12 @@ module LayoutHelper
   def action_name?(action_name)
     return true if controller.action_name == action_name
   end  
+
+  def is_footer_visible
+    controller_name != "sessions" 
+    #&&
+    #action_name != "staged_registration_update"
+
+  end
+  
 end

@@ -25,7 +25,8 @@ html lang="en"
         		/= content_tag :div, msg, :id = "flash_#{name}"
 
           = yield
-       
-    footer
-      .container
-        == render 'layouts/footer'
+    
+    - is_footer_visible   
+      footer
+        .container
+          == render 'layouts/footer'
