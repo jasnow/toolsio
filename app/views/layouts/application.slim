@@ -7,33 +7,26 @@ html lang="en"
     meta content="" name="description"
     meta content="" name="author"
 
-    title Timetracker
+    title Bizdesc
 
     = stylesheet_link_tag    'application', media: 'all', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    header
-      .container
-        nav.navbar.navbar-default
-          .navbar-header
-            = link_to I18n.t('navigation.time_tracker'), root_path, class: 'navbar-brand'
+    #wrapper class="#{controller.controller_name} #{controller.action_name}"
+      header
+        - if user_signed_in?
+          == render 'layouts/internal_page_navigation'
 
-          - if user_signed_in?
-            .pull-right.right-buttons
-      			   = link_to I18n.t('button.sign_out'), destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn'
-            ul.nav.navbar-nav.navbar-right
-              li = link_to I18n.t('page.project.headline'), new_project_path
-              li = link_to I18n.t('page.users.headline'), users_path
+      section
+        .container
+          = flash_messages if show_layout_flash?
+        	/flash.each do |name, msg|
+        		/= content_tag :div, msg, :id = "flash_#{name}"
 
-    section
-      .container
-        = flash_messages if show_layout_flash?
-      	/flash.each do |name, msg|
-      		/= content_tag :div, msg, :id = "flash_#{name}"
-
-        .row
           = yield
-
-    footer
-      .container
+    
+    - if is_footer_visible
+      footer
+        .container
+          == render 'layouts/footer'

@@ -1,27 +1,187 @@
+html, body {
+  height: 100%;
+}
+
 body {
-	padding-top: 20px;
+  padding-top: 70px;
+  color: $light-mid-night-blue;
 }
 
-#flash_notice {
-	@extend .alert;
-	@extend .alert-success;
+#wrapper {
+  min-height: 100%;
 }
 
-#flash_error, #flash_alert {
-	@extend .alert;
-	@extend .alert-danger;
+#wrapper > section {
+  overflow: auto;
+  padding-bottom: 100px; /* this needs to be bigger than footer height*/
 }
 
-#flash_warning {
-	@extend .alert;
-	@extend .alert-warning;
+p {
+  font-family: "Open Sans","HelveticaNeue","Helvetica","Arial",sans-serif;
+  line-height: 1.2;
+}
+
+a {
+  color: $light-turquoise;
+  &:hover, &:focus {
+    color: $dark-turquoise;
+  }  
+}
+
+// Footer
+footer {
+  position: relative;
+  margin-top: -100px;
+  height: 100px;
+  clear: both;
+  padding: 20px;
+  background-color: $dark-mid-night-blue;
+  color: $medium-grey;
+}
+
+// Flash 
+.alert-success {
+  color: $dark-grass;
+  background: $white-grass;
+  border-color: $x-light-grass; 
+}
+
+.alert-danger {
+  color: $dark-red;
+  background: $white-red;
+  border-color: $x-light-red; 
+}
+
+.flash-notice {
+  @extend .alert-success;
+}
+
+.flash-alert, #flash-alert {
+  @extend .alert-danger;
+}
+
+.flash_warning {
+  @extend .alert-warning;
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: $red;
+}
+
+.has-error .form-control {
+  border-color: $red;
+  box-shadow: none;
+}
+
+// Navabars
+.navbar-default .navbar-brand {
+  color: $white-turquoise;
+  &:hover, &:focus {
+    color: $white-turquoise;
+  }
 }
 
 .navbar .right-buttons {
-	margin-right: 15px;
-	margin-left: 25px;
+  margin-left: 20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $white;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:focus {
+  background-color: $light-mid-night-blue;
+  > a {
+    color: $light-grey;
+  }  
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: $light-mid-night-blue;
+  color: $light-grey;
 }
 
 abbr, accronym { 
 	border-bottom: 0px !important; 
 } 
+
+nav .container {
+  width: 100%;  
+}
+
+.navbar-default {
+  background-color: $turquoise;
+  border-color: transparent;
+}   
+
+// Font awesome
+a .fa {
+  margin-right: 3px;
+}
+
+// Panel
+.panel-default {
+  border-color: $dark-light-grey;
+}
+
+.panel-default.light-grey {
+  background-color: $light-grey;
+  border-color: $dark-light-grey;
+}
+
+// Table
+.table { 
+  border: 1px solid $light-medium-grey;
+  > thead {
+    background-color: $light-dark-grey;
+    color: $light-grey;
+    border: 1px solid $light-dark-grey;
+  }
+}
+
+.table > thead > tr > th {
+  border-bottom: 2px solid $light-turquoise;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: $light-grey;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: $white;
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  border-top: 1px solid $light-medium-grey;
+}
+
+th, td {
+  text-align: center;
+}
+
+/* Small devices (tablets, 768px) */
+@media (min-width: $screen-sm-min) {
+  .form-inline label.datetime {
+    display: block;
+    margin-bottom: 0; 
+  }  
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1370px;
+  }
+}

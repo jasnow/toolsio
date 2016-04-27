@@ -1,0 +1,10 @@
+= simple_form_for(@invoice,
+              warpper_mappings: { boolean: :vertical_boolean}) do |f|
+  = f.input :company
+  = f.input :salesperson
+  = f.input :tax
+  
+  .form-inline
+    = f.input :date
+
+  = f.button :submit, label: I18n.t('controllers.invoices.new.create_invoice_btn'), class: 'btn-primary'

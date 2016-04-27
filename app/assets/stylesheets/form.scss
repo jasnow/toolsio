@@ -1,0 +1,69 @@
+// Input fields
+.form-inline {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  border: 1px solid $dark-light-grey;  
+  background-color: $light-grey;
+  border-radius: 2px;
+  box-shadow: none;
+  &:focus {
+    border-color: $turquoise;
+    box-shadow: none;
+  }
+}
+
+// Buttons
+.btn-primary {
+  background-color: $turquoise !important;
+  border-color: $turquoise !important;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  &:hover, &:focus {
+    background-color: $dark-turquoise !important;
+    border-color: $dark-turquoise !important;
+  }
+}
+
+.btn-danger {
+  background-color: $red;
+  border-color: $red;
+  &:hover, &.focus {
+    background-color: $dark-red;
+    border-color: $dark-red;
+  }  
+}
+
+.btn-success {
+  background: $grass;
+  border-color: $grass;
+  &:hover, &.focus {
+    background-color: $dark-grass;
+    border-color: $dark-grass;
+  }  
+}
+
+.btn-info {
+  background: $dark-light-grey;
+  border-color: $dark-light-grey;
+  color: $black;
+  &:hover, &.focus {
+    background-color: $light-medium-grey;
+    border-color: $light-medium-grey;
+    color: $black;
+  }  
+}
+
+.btn-white {
+  @extend .btn-default;
+  background: $white;
+  border-color: $white;
+  &:hover, &.focus {
+    background-color: $light-light-grey;
+    border-color: $light-light-grey;
+  }  
+}
