@@ -1,0 +1,18 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      = link_to I18n.t('navigation.bizdesc'), root_path, class: 'navbar-brand'
+    #navbar.navbar-collapase.collapse  
+    .pull-right.right-buttons
+      = link_to destroy_user_session_path, method: 'delete', class: 'btn btn-danger btn-sm navbar-btn' do
+        = icon ('sign-out')
+        span = I18n.t('button.sign_out')
+    ul.nav.navbar-nav
+      li class = ('active' if current_page? invoices_path) 
+        = link_to I18n.t('invoices.index.header'), invoices_path
+      li class = ('active' if current_page? new_project_path)
+        = link_to I18n.t('projects.index.header'), new_project_path
+      li class = ('active' if current_page? users_path)
+        = link_to I18n.t('users.index.header'), users_path
+    ul.nav.navbar-nav.navbar-right
+      li = link_to I18n.t('settings.index.header'), '#'

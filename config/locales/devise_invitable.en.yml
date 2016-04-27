@@ -6,12 +6,18 @@ en:
       updated: 'Your account was created successfully. You are now signed in.'
       no_invitations_remaining: "No invitations remaining"
       invitation_removed: 'Your invitation was removed.'
-      new:
-        header: "Send invitation"
-        submit_button: "Send an invitation"
+      create:
+        header: "Send Invitation"
+        send_invitation_button: "Send an invitation"
       edit:
-        header: "Set your password"
-        submit_button: "Set my password"
+        header: Create Account
+        create_account_button: Create Account
+        prompt: Welcome! You now can create your own accont by filling the fields bellow
+    passwords:
+      new:
+        header: Forgot your password?  
+      edit:
+        header: Change your password      
     mailer:
       invitation_instructions:
         subject: 'Invitation instructions'
