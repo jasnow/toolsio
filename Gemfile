@@ -38,4 +38,5 @@ group :development, :test do
   gem 'mailcatcher'
   gem 'email_spec'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end

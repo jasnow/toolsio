@@ -25,9 +25,10 @@ module LayoutHelper
   end  
 
   def is_footer_visible
-    controller_name != "sessions" 
-    #&&
-    #action_name != "staged_registration_update"
+    first_condition = controller_name != "sessions" && (controller_name != "accounts" && action_name != "create" ) && 
+    (controller_name != "invitaions" && action_name != "edit" )
+
+    first_condition
 
   end
   

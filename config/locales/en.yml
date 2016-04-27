@@ -31,33 +31,48 @@ en:
     sign_in: Sign in
   navigation:
     bizdesc: Bizdesc
-  form:
-    create_account: Create an Account
-    forgot_password: Forgot your password?
-  flash:
-    notice:
-      project_created: "Project created!"
-      project_updated: "Project updated!"
-    error:
-  page:
-    landing:
+  welcome:
+    index:
       time_tracker: Time Tracker
       slogan: Track your time with the most awesome time tracking app ever
-    project:
-      headline: New project
-      update_project: Update Project
+  accounts:
+    new:
+      header: Create an Account
+      prompt: All fields are mandatory. Enter correct information. 
+  projects:
+    index:
+      header: Projects
       no_entries: No entries yet!
-    users:
-      headline: Users
+    new:
+      header: New Project
+      notice_create: "Project created!"
+    update:
+      header: Update Project
+      notice_update: "Project updated!"
+  users:
+    index:
+      header: Users
       authorized_user: Authorized user
-    invoice:
-      headline: Invoices  
+      invite_user: Invite User
+  invoices:
+    index:
+      header: Invoices  
+      new_invoice_button: New Invoice
+      are_you_sure: Are you sure? 
+    new:
+      header: New Invoice
       company: Company
       date: Date
       salesperson: Salesperosn 
       tax: Tax
-      new_invoice: New Invoice
-      create_invoice: Create Invoice
-    setting:
-      headline: Setting
+      create_invoice_button: Create Invoice
+    create:  
+      notice_create: "Invoice created!"
+    update:  
+      notice_update: "Invoice updated!"
+    destroy:
+      notice_delete: "Invoice deleted"  
+  settings:
+    index:
+      header: Settings
         

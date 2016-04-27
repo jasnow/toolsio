@@ -12,8 +12,8 @@ describe 'invitations' do
 
   it 'validates email' do
     fill_in 'Email', with: 'wrong'
-    click_button 'Invite User'
-    expect(page).to have_content 'Send Invitation'
+    click_button I18n.t('users.index.invite_user')
+    expect(page).to have_content I18n.t('devise.invitations.create.header')
     expect(page).to have_content 'invalid'
   end
 
@@ -47,7 +47,7 @@ describe 'invitations' do
         fill_in 'Second name', with: 'Hailemariam'
         fill_in 'Password', with: 'pw'
         fill_in 'Password confirmation', with: 'pw'
-        click_button 'Create Account'
+        click_button I18n.t('devise.invitations.edit.create_account_button')
       end
 
       it 'confirms account creation' do

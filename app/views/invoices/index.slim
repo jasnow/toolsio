@@ -1,13 +1,13 @@
 .row
   .col-md-12
-    h1 = I18n.t('page.invoice.headline')
+    h1 = I18n.t('invoices.index.header')
     table.table.table-striped
       thead
         tr
-          th = I18n.t('page.invoice.date')
-          th = I18n.t('page.invoice.company')
-          th = I18n.t('page.invoice.salesperson')
-          th = I18n.t('page.invoice.tax')
+          th = I18n.t('invoices.new.date')
+          th = I18n.t('invoices.new.company')
+          th = I18n.t('invoices.new.salesperson')
+          th = I18n.t('invoices.new.tax')
           th = I18n.t('button.show')
           th = I18n.t('button.edit')
           th = I18n.t('button.delete')
@@ -29,8 +29,8 @@
                 span = I18n.t('button.edit') 
 
             td 
-              = link_to invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('form.are_you_sure') }     
+              = link_to invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('controllers.invoices.index.are_you_sure') }     
                 = icon('trash')
                 span = I18n.t('button.delete')
 
-    = link_to I18n.t('page.invoice.new_invoice'), new_invoice_path, class: 'btn btn-primary'
+    = link_to I18n.t('invoices.index.new_invoice_button'), new_invoice_path, class: 'btn btn-primary'

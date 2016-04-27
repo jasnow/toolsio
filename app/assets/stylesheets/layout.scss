@@ -56,7 +56,7 @@ footer {
   @extend .alert-success;
 }
 
-.flash-error, #flash-alert {
+.flash-alert, #flash-alert {
   @extend .alert-danger;
 }
 

@@ -11,20 +11,20 @@ describe 'invitations' do
 
   it "allows projects to be created" do
   	visit root_path
-  	click_link "New project"
+  	click_link I18n.t('projects.index.header')
 
   	fill_in "Name", with: "A great project"
   	fill_in "Client", with: "NASA"
   	expect(page).to_not have_text "Archived"
   	click_button "Create Project"
 
-  	expect(page).to have_text "Project created!"
+  	expect(page).to have_text I18n.t('projects.new.notice_create')
   	expect(page).to have_text "A great project"
   end
 
   it "displays project validations" do
   	visit root_path
-  	click_link "New project"
+  	click_link I18n.t('projects.index.header')
 
   	click_button "Create Project"
   	expect(page).to have_text "can't be blank"
@@ -40,7 +40,7 @@ describe 'invitations' do
   	check "Archived"
   	click_button "Update Project"
 
-  	expect(page).to have_text "Project updated!"
+  	expect(page).to have_text I18n.t('projects.update.notice_update')
   	expect(page).to have_text "A new name"
   end
 

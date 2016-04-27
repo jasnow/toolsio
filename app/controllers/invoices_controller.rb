@@ -11,7 +11,7 @@ class InvoicesController < ApplicationController
   def create
     @invoice = Invoice.new(invoice_params)
     if @invoice.save
-      redirect_to invoices_path, notice: I18n.t('flash.notice.invoice_created')
+      redirect_to invoices_path, notice: I18n.t('invoices.create.notice_create')
     else
       render :new
     end  

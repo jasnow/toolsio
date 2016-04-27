@@ -26,7 +26,7 @@ html lang="en"
 
           = yield
     
-    - is_footer_visible   
+    - if is_footer_visible
       footer
         .container
           == render 'layouts/footer'
