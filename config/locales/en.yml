@@ -27,6 +27,7 @@ en:
     delete: Delete
     show: Show 
     edit: Edit
+    back: Back
     ok: OK
     create_account: Create Account
     invite_user: Invite user
@@ -69,6 +70,10 @@ en:
       salesperson: Salesperosn 
       tax: Tax
       create_invoice_button: Create Invoice
+    edit:
+      header: Edit invoice
+    Show: 
+      header: Show invoice          
     create:  
       notice_create: "Invoice created!"
     update:  

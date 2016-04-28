@@ -1,0 +1,19 @@
+p
+  strong Date:
+  = @invoice.date 
+
+p
+  strong Company:
+  = @invoice.company
+
+p
+  strong Tax:
+  = @invoice.tax
+
+p
+  strong Salesperson:
+  /= @invoice.employee.name 
+
+
+= link_to 'Edit', edit_invoice_path(@invoice) 
+= link_to 'Back', invoices_path  

@@ -17,6 +17,16 @@ class InvoicesController < ApplicationController
     end  
   end
 
+  # GET /invoices/1
+  def show 
+    @invoice = Invoice.find(params[:id]) 
+  end
+
+  # GET /invoices/1/edit
+  def edit
+    @invoice = Invoice.find(params[:id]) 
+  end
+
   def destroy
 
   end

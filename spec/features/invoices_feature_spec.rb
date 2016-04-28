@@ -24,6 +24,34 @@ describe 'invoices' do
     expect(page).to have_text 'ABB'
   end
 
+  it 'allows invoice to be shown' do 
+    invoice = create(:invoice)
+
+    visit invoices_path 
+
+    click_link I18n.t('button.show')
+    expect(page).to have_text invoice.date 
+    expect(page).to have_text invoice.company
+    expect(page).to have_text invoice.tax
+
+    expect(page).to have_link edit_invoice_path(invoice)
+    expect(page).to have_link invoices_path
+  end
+
+  it 'allows invoice to be edited' do
+    invoice = create(:invoice)
+
+    visit invoices_path
+
+    click_link I18n.t('button.edit')
+    
+    fill_in 'Company', with: 'ABB'
+    fill_in 'Salesperson', with: 'Birhanu'
+    fill_in 'Tax', with: '12.5'
+    select_date_and_time(DateTime.now, from: 'invoice_date')
+
+  end  
+
   it 'displays invoice validations' do
     visit invoices_path
     click_link I18n.t('invoices.index.new_invoice_button')
