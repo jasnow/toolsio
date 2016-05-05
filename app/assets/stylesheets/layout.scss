@@ -161,7 +161,7 @@ th, td {
 }
 
 /* Small devices (tablets, 768px) */
-@media (min-width: $screen-sm-min) {
+@media (max-width: $screen-xs-max) {
   .form-inline label.datetime {
     display: block;
     margin-bottom: 0; 
@@ -169,19 +169,19 @@ th, td {
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .container {
     width: 950px;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   .container {
     width: 1170px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .container {
     width: 1370px;
   }

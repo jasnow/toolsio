@@ -8,7 +8,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         = icon ('sign-out')
         span = I18n.t('button.sign_out')
     ul.nav.navbar-nav
-      li class = ('active' if current_page? invoices_path) 
+      li class = ('active' if controller_name? 'invoices') 
         = link_to I18n.t('invoices.index.header'), invoices_path
       li class = ('active' if current_page? new_project_path)
         = link_to I18n.t('projects.index.header'), new_project_path
