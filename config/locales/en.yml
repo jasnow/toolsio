@@ -71,9 +71,9 @@ en:
       tax: Tax
       create_invoice_button: Create Invoice
     edit:
-      header: Edit invoice
-    Show: 
-      header: Show invoice          
+      header: Edit Invoice
+    show: 
+      header: Show Invoice          
     create:  
       notice_create: "Invoice created!"
     update:  

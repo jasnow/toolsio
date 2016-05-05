@@ -91,14 +91,14 @@ footer {
 }
 
 .navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:focus {
-  background-color: $light-mid-night-blue;
+  background-color: $light-turquoise;
   > a {
     color: $light-grey;
   }  
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: $light-mid-night-blue;
+  background-color: $light-turquoise;
   color: $light-grey;
 }
 
@@ -139,6 +139,12 @@ a .fa {
   border-color: $dark-light-grey;
 }
 
+// Well
+.well {
+  background-color: $light-grey;
+  border-color: $dark-light-grey;
+}
+
 // Table
 .table { 
   border: 1px solid $light-medium-grey;
@@ -169,8 +175,15 @@ th, td {
   text-align: center;
 }
 
+// Custom table for list
+.table-list-view {
+  thead > tr > th, tbody > tr td {
+    text-align: left;
+  }
+}
+
 /* Extremely very extra small devices (phones, less than 480px) */   
-@media (max-width: $screen-xxxs-min) { 
+@media (max-width: $screen-xxxs-max) { 
   .visible-xxxs {
     display: inline-block !important;
   }
@@ -218,9 +231,7 @@ th, td {
 
 /* Small devices (tablets, 768px and upto large desktops, 1200px and up) */   
 @media (min-width: $screen-sm-min) {
-  .btn {
-    @extend .btn-block;
-  }
+  
 }
 
 /* Small devices (tablets, 768px and upto desktops, 992px) */   

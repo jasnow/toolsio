@@ -1,22 +1,25 @@
 .row
-  .col-md-12
-    h1 = I18n.t('invoices.index.header')
-    p
-      strong Date:
-      = @invoice.date 
+  .col-md-6
+    h1 = I18n.t('invoices.show.header')
+    .well.well-sm
+      table.table-condensed.table-list-view
+        tbody
+          tr
+            td Date:
+            td = @invoice.date 
+          tr
+            td Company:
+            td = @invoice.company
 
-    p
-      strong Company:
-      = @invoice.company
+          tr
+            td Tax:
+            td = @invoice.tax
 
-    p
-      strong Tax:
-      = @invoice.tax
-
-    p
-      strong Salesperson:
-      /= @invoice.employee.name 
+          tr
+            td Salesperson:
+            td 
+              /= @invoice.employee.name 
 
 
-    = link_to 'Edit', edit_invoice_path(@invoice) 
-    = link_to 'Back', invoices_path  
+    = link_to 'Back', invoices_path, class: 'btn btn-black'  
+    = link_to 'Edit', edit_invoice_path(@invoice), class: 'btn btn-primary' 

@@ -15,11 +15,13 @@
 }
 
 // Buttons
+.btn {
+  @include border-radius(2px);  
+}
+
 .btn-primary {
   background-color: $turquoise !important;
   border-color: $turquoise !important;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
@@ -69,17 +71,32 @@
   }  
 }
 
+.btn-black {
+  @extend .btn-default;
+  color: $white;
+  background: $light-mid-night-blue;
+  border-color: $light-mid-night-blue;
+  &:hover, &.focus {
+    color: $white;
+    background-color: $mid-night-blue;
+    border-color: $mid-night-blue;
+  }  
+}
+
 /* Extra small devices (phones, less than 768px) */   
 @media (max-width: $screen-xs-max) { 
   .form-inline label.datetime {
     display: block;
     margin-bottom: 0; 
   }  
+  .btn {
+    display: block;
+  }
 }
 
 /* Small devices (tablets, 768px and upto large desktops, 1200px and up) */   
 @media (min-width: $screen-sm-min) {
   .btn {
-    @extend .btn-block;
+    margin-right: 5px;
   }
 }
