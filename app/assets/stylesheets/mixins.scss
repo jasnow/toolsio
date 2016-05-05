@@ -1,0 +1,37 @@
+// Mixin functions
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius !important;
+     -moz-border-radius: $radius !important;
+      -ms-border-radius: $radius !important;
+       -o-border-radius: $radius !important;
+          border-radius: $radius !important;
+}
+
+@mixin transform-translate($percent) {
+  -webkit-transform: translateY($percent) !important;
+     -moz-transform: translateY($percent) !important;
+      -ms-transform: translateY($percent) !important;
+       -o-transform: translateY($percent) !important;
+          transform: translateY($percent) !important;
+}
+
+@mixin web-appearance($display) {
+  -webkit-appearance: ($display) !important;
+     -moz-appearance: ($display) !important;
+      -ms-appearance: ($display) !important;
+       -o-appearance: ($display) !important;
+          appearance: ($display) !important;
+}
+
+@mixin scrollbar {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     -moz-appearance: inset 0 0 6px rgba(0,0,0,0.3);
+      -ms-appearance: inset 0 0 6px rgba(0,0,0,0.3);
+       -o-appearance: inset 0 0 6px rgba(0,0,0,0.3);
+          appearance: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+@mixin transition($options) {
+  -webkit-transition: ($options); /* Safari */
+  transition: ($options);
+}

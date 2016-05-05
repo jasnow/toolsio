@@ -69,7 +69,17 @@
   }  
 }
 
+/* Extra small devices (phones, less than 768px) */   
+@media (max-width: $screen-xs-max) { 
+  .form-inline label.datetime {
+    display: block;
+    margin-bottom: 0; 
+  }  
+}
+
 /* Small devices (tablets, 768px and upto large desktops, 1200px and up) */   
-@media (min-width: @screen-sm-min) {
-  
+@media (min-width: $screen-sm-min) {
+  .btn {
+    @extend .btn-block;
+  }
 }

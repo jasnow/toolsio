@@ -120,6 +120,15 @@ a .fa {
   margin-right: 3px;
 }
 
+// Display
+.visible-all-inline-block {
+  display: inline-block;
+}
+
+.visible-all-inline {
+  display: inline;
+}
+
 // Panel
 .panel-default {
   border-color: $dark-light-grey;
@@ -160,19 +169,71 @@ th, td {
   text-align: center;
 }
 
+/* Extremely very extra small devices (phones, less than 480px) */   
+@media (max-width: $screen-xxxs-min) { 
+  .visible-xxxs {
+    display: inline-block !important;
+  }
+  .hidden-xxxs {
+    display: none;
+  } 
+}
+
+/* Very extra small devices (phones, 320px, and upto small phones, 480px) */   
+@media (min-width: $screen-xxs-min) and (max-width: $screen-xxs-max) { 
+  .visible-xxxs {
+    display: none;
+  }
+}
+
+/* Very extra small devices (phones, less than 480px) */   
+@media (max-width: $screen-xxs-max) { 
+  .visible-xxs {
+    display: inline-block !important;
+  }
+  .hidden-xxs {
+    display: none;
+  } 
+}
+
+/* Extra small devices (phones, 480px, and upto large phones, 768px) */   
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) { 
+  .visible-xxxs {
+    display: none;
+  }
+  .visible-xxxs {
+    display: none;
+  }
+  .visible-xxs {
+    display: none;
+  }
+}
+
 /* Extra small devices (phones, less than 768px) */   
-@media (max-width: @screen-xs-max) { 
-  .form-inline label.datetime {
-    display: block;
-    margin-bottom: 0; 
-  }  
+@media (max-width: $screen-xs-max) { 
+  .visible-xxs {
+    display: none;
+  }
+}
+
+/* Small devices (tablets, 768px and upto large desktops, 1200px and up) */   
+@media (min-width: $screen-sm-min) {
+  .btn {
+    @extend .btn-block;
+  }
 }
 
 /* Small devices (tablets, 768px and upto desktops, 992px) */   
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { 
+
+}
 
 /* Medium devices (desktops, 992px and upto large desktops, 1200px) */   
-@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) { 
+
+}
 
 /* Large devices (large desktops, 1200px and up) */   
-@media (min-width: @screen-lg-min) { ... }
+@media (min-width: $screen-lg-min) { 
+
+}
