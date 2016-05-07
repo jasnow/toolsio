@@ -35,9 +35,8 @@ describe 'invoices' do
       expect(page).to have_text @invoice.date 
       expect(page).to have_text @invoice.company
       expect(page).to have_text @invoice.tax
-
-      expect(page).to have_link edit_invoice_path(@invoice)
-      expect(page).to have_link invoices_path
+    
+      expect(page).to have_link I18n.t('button.edit')
     end
 
     it 'allows invoice to be edited' do

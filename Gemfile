@@ -23,7 +23,6 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 
 gem 'simple_form'
-gem 'rails_12factor'
 
 gem 'font-awesome-sass'
 
@@ -41,4 +40,8 @@ group :development, :test do
   gem 'email_spec'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
