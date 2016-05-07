@@ -80,7 +80,8 @@ en:
     update:  
       success_update: "Invoice updated!"
     destroy:
-      notice_delete: "Invoice deleted"  
+      success_delete: "Invoice deleted"  
+      error_delete: "Invoice couldn't be deleted, try again after refreshing the page" 
   settings:
     index:
       header: Settings

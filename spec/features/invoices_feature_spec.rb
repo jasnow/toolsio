@@ -55,8 +55,9 @@ describe 'invoices' do
       click_link I18n.t('button.delete')
       
       #expect(page).to have_text I18n.t('invoices.index.are_you_sure')
-       
-
+      expect(page).to have_text I18n.t('invoices.distroy.success_delete')
+      expect(page).to_not have_text @invoice.date
+      expect(page).to_not have_text @invoice.company
     end  
   end  
 
