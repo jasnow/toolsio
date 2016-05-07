@@ -25,18 +25,18 @@ describe 'invoices' do
   end
 
   describe 'when user has invoice' do
-    before do
-      invoice = create(:invoice)
+    before(:each) do
+      @invoice = create(:invoice)
       visit invoices_path
     end   
 
     it 'allows invoice to be shown' do 
       click_link I18n.t('button.show')
-      expect(page).to have_text invoice.date 
-      expect(page).to have_text invoice.company
-      expect(page).to have_text invoice.tax
+      expect(page).to have_text @invoice.date 
+      expect(page).to have_text @invoice.company
+      expect(page).to have_text @invoice.tax
 
-      expect(page).to have_link edit_invoice_path(invoice)
+      expect(page).to have_link edit_invoice_path(@invoice)
       expect(page).to have_link invoices_path
     end
 
@@ -48,6 +48,8 @@ describe 'invoices' do
       fill_in 'Tax', with: '12.5'
       select_date_and_time(DateTime.now, from: 'invoice_date')
 
+      submit_form
+      expect(page).to have_text I18n.t('invoices.update.success_update')
     end  
 
     it 'allows invoice to be deleted' do

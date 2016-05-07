@@ -1,8 +1,5 @@
 .row
   .col-md-6
-    = link_to :back do
-      = icon ('angle-left') 
-      = I18n.t('button.back') 
     h1 = I18n.t('invoices.show.header')
     .well.well-sm
       table.table-condensed.table-list-view
@@ -23,4 +20,9 @@
             td 
               /= @invoice.employee.name 
     
-    = link_to 'Edit', edit_invoice_path(@invoice), class: 'btn btn-primary' 
+    /= link_to :back do
+      = icon ('angle-left') 
+      = I18n.t('button.back') 
+
+    = link_to I18n.t('button.exit'), invoices_path, class: 'btn btn-black' 
+    = link_to I18n.t('button.edit'), edit_invoice_path(@invoice), class: 'btn btn-primary' 

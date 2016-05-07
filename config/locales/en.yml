@@ -28,6 +28,7 @@ en:
     show: Show 
     edit: Edit
     back: Back
+    exit: Exit 
     ok: OK
     create_account: Create Account
     invite_user: Invite user
@@ -77,7 +78,7 @@ en:
     create:  
       notice_create: "Invoice created!"
     update:  
-      notice_update: "Invoice updated!"
+      success_update: "Invoice updated!"
     destroy:
       notice_delete: "Invoice deleted"  
   settings:

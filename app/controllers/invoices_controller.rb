@@ -27,6 +27,16 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.find(params[:id]) 
   end
 
+  def update
+    @invoice = Invoice.find(params[:id]) 
+    if @invoice.update_attributes(invoice_params)
+      flash.now[:success] = I18n.t('invoices.update.success_update')
+      render :show
+    else
+      render :edit
+    end 
+  end
+
   def destroy
 
   end

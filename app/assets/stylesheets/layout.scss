@@ -52,11 +52,11 @@ footer {
   border-color: $x-light-red; 
 }
 
-.flash-notice {
+.alert-notice {
   @extend .alert-success;
 }
 
-.flash-alert, #flash-alert {
+.alert-alert {
   @extend .alert-danger;
 }
 

@@ -4,7 +4,7 @@ module LayoutHelper
 
     capture do
       flash.each do |name, msg|        
-        concat(content_tag(:div, msg, class: "alert flash-#{name} alert-dismissible", role: "alert") do
+        concat(content_tag(:div, msg, class: "alert alert-#{name} alert-dismissible", role: "alert") do
           concat content_tag(:button, content_tag(:span, '&times;'.html_safe, aria: { hidden: 'true' }), class: 'close', data: { dismiss: 'alert' }, aria: { label: 'Close' })
           concat content_tag(:p, msg)
         end)
