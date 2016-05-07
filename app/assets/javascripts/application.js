@@ -9,3 +9,6 @@
 //= require bootstrap/button
 //= require bootstrap/tooltip
 //= require bootstrap/carousel
+
+// Local files
+//= require confirmation_modal
