@@ -9,10 +9,10 @@
             .form-group
               = link_to edit_project_path(project), class: "icon-link" do
                 small
-                  i.glyphicon.glyphicon-cog
+                  = icon ('cog')
             .form-group
               small
-                i.glyphicon.glyphicon-plus-sign
+                = icon ('plus-circle')
 
       ul.list-group
         li.list-group-item = I18n.t('projects.index.no_entries')

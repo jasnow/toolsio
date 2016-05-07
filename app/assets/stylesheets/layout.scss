@@ -116,9 +116,6 @@ nav .container {
 }   
 
 // Font awesome
-a .fa {
-  margin-right: 3px;
-}
 
 // Display
 .visible-all-inline-block {
@@ -142,7 +139,8 @@ a .fa {
 // Well
 .well {
   background-color: $light-grey;
-  border-color: $dark-light-grey;
+  border-color: $light-medium-grey;
+  text-shadow: none;
 }
 
 // Table
@@ -177,7 +175,10 @@ th, td {
 
 // Custom table for list
 .table-list-view {
-  thead > tr > th, tbody > tr td {
+  thead > tr > th:first-child, tbody > tr td:first-child {
+    text-align: right;
+  }
+  thead > tr > th:first-child + th, tbody > tr td:first-child + td {
     text-align: left;
   }
 }

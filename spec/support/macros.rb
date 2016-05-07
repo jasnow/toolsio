@@ -23,7 +23,7 @@ def sign_user_in(user, opts={})
 
   fill_in 'Email', with: user.email
   fill_in 'Password', with: (opts[:password] || user.password)
-  click_button 'Sign in'
+  click_button I18n.t('button.sign_in')
 end
 
 def set_subdomain(subdomain)

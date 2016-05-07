@@ -24,32 +24,39 @@ describe 'invoices' do
     expect(page).to have_text 'ABB'
   end
 
-  it 'allows invoice to be shown' do 
-    invoice = create(:invoice)
+  describe 'when user has invoice' do
+    before do
+      invoice = create(:invoice)
+      visit invoices_path
+    end   
 
-    visit invoices_path 
+    it 'allows invoice to be shown' do 
+      click_link I18n.t('button.show')
+      expect(page).to have_text invoice.date 
+      expect(page).to have_text invoice.company
+      expect(page).to have_text invoice.tax
 
-    click_link I18n.t('button.show')
-    expect(page).to have_text invoice.date 
-    expect(page).to have_text invoice.company
-    expect(page).to have_text invoice.tax
+      expect(page).to have_link edit_invoice_path(invoice)
+      expect(page).to have_link invoices_path
+    end
 
-    expect(page).to have_link edit_invoice_path(invoice)
-    expect(page).to have_link invoices_path
-  end
+    it 'allows invoice to be edited' do
+      click_link I18n.t('button.edit')
+      
+      fill_in 'Company', with: 'ABB'
+      fill_in 'Salesperson', with: 'Birhanu'
+      fill_in 'Tax', with: '12.5'
+      select_date_and_time(DateTime.now, from: 'invoice_date')
 
-  it 'allows invoice to be edited' do
-    invoice = create(:invoice)
+    end  
 
-    visit invoices_path
+    it 'allows invoice to be deleted' do
+      click_link I18n.t('button.delete')
+      
+       expect(page).to have_text I18n.t('invoices.index.are_you_sure')
+       
 
-    click_link I18n.t('button.edit')
-    
-    fill_in 'Company', with: 'ABB'
-    fill_in 'Salesperson', with: 'Birhanu'
-    fill_in 'Tax', with: '12.5'
-    select_date_and_time(DateTime.now, from: 'invoice_date')
-
+    end  
   end  
 
   it 'displays invoice validations' do

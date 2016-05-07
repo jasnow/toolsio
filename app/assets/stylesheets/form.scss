@@ -84,18 +84,19 @@
 }
 
 /* Extra small devices (phones, less than 768px) */   
-@media (max-width: $screen-xs-max) { 
-  .form-inline label.datetime {
-    display: block;
-    margin-bottom: 0; 
-  }  
+@media (max-width: $screen-xs-max) {    
   .btn {
     display: block;
+    width: 100%;
   }
 }
 
 /* Small devices (tablets, 768px and upto large desktops, 1200px and up) */   
 @media (min-width: $screen-sm-min) {
+  .form-inline label.datetime {
+    display: block;
+    margin-bottom: 0; 
+  } 
   .btn {
     margin-right: 5px;
   }
