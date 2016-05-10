@@ -30,13 +30,16 @@
                   = I18n.t('button.edit') 
 
               td 
-                = link_to invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('invoices.index.are_you_sure') }     
+                /= link_to invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('invoices.index.are_you_sure') }     
                   = icon('trash')
                   = I18n.t('button.delete')   
-                /= link_to '#confirmation-modal-container', method: :delete, class: 'btn btn-danger btn-sm confirmation-button', data: { id: invoice.id }     
+                = link_to '#confirmation-modal-container', class: 'btn btn-danger btn-sm confirmation-button', data: { id: invoice.id }     
                   = icon('trash')
                   = I18n.t('button.delete')
 
     = link_to I18n.t('invoices.index.new_invoice_button'), new_invoice_path, class: 'btn btn-primary'
+  
+    /= link_to "#confirmation-modal-container", class: 'btn btn-primary btn-lg', data: { toggle: 'modal' }
+      |Launch demo modal
 
 == render 'layouts/confirmation_modal'

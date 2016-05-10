@@ -12,3 +12,6 @@ def drop_schemas
   end
 end
 
+def wait_until_modal_footer
+  page.has_css?('.modal-footer')
+end 

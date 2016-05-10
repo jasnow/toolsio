@@ -40,7 +40,7 @@ class InvoicesController < ApplicationController
   def destroy
     @invoice = Invoice.find(params[:id]) 
     if @invoice.destroy
-      redirect_to invoices_url, notice: I18n.t('invoices.distroy.success_delete')
+      redirect_to invoices_url, notice: I18n.t('invoices.destroy.success_delete')
     else
       flash.now[:error] = I18n.t('invoices.distroy.error_delete')
     end  

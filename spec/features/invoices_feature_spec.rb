@@ -16,6 +16,7 @@ describe 'invoices' do
     fill_in 'Company', with: 'ABB'
     fill_in 'Salesperson', with: 'Birhanu'
     fill_in 'Tax', with: '12.5'
+
     select_date_and_time(DateTime.now, from: 'invoice_date')
 
     click_button I18n.t('invoices.new.create_invoice_button')
@@ -52,12 +53,22 @@ describe 'invoices' do
     end  
 
     it 'allows invoice to be deleted' do
-      click_link I18n.t('button.delete')
-      
-      #expect(page).to have_text I18n.t('invoices.index.are_you_sure')
-      expect(page).to have_text I18n.t('invoices.distroy.success_delete')
-      expect(page).to_not have_text @invoice.date
-      expect(page).to_not have_text @invoice.company
+      within('tbody tr') do 
+        click_link I18n.t('button.delete')
+      end
+      expect(page).to have_text I18n.t('invoices.destroy.confirmation_msg')
+     
+      wait_until_modal_footer do
+        page.has_css?('.modal-footer')
+        
+        within('.modal-footer') do 
+          click_link I18n.t('button.delete')
+        end
+
+        expect(page).to have_text I18n.t('invoices.destroy.success_delete')
+        expect(page).to_not have_text @invoice.date
+        expect(page).to_not have_text @invoice.company
+      end        
     end  
   end  
 
