@@ -6,9 +6,8 @@
           |&times;
         h4.modal-title Confirmation
       .modal-body
-        p = I18n.t('invoices.destroy.confirmation_msg')
-        p.text-warning.
-          small = I18n.t('invoices.destroy.warning_msg') 
+        p.text-warning. = I18n.t('invoices.destroy.confirmation_msg')
+       
         /p Do you want to save changes you made to document before closing?
         /p.text-warning.
           small If you don't save, your changes will be lost.
