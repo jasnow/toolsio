@@ -24,8 +24,7 @@
   border-color: $turquoise !important;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
-  transition: background-color 300ms ease-out;
-
+  transition: background-color 300ms ease-out;  
   &:hover, &:focus {
     background-color: $dark-turquoise !important;
     border-color: $dark-turquoise !important;

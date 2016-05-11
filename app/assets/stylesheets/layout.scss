@@ -5,6 +5,7 @@ html, body {
 body {
   padding-top: 70px;
   color: $light-mid-night-blue;
+  font-size: 15px;
 }
 
 #wrapper {
@@ -18,7 +19,7 @@ body {
 
 p {
   font-family: "Open Sans","HelveticaNeue","Helvetica","Arial",sans-serif;
-  line-height: 1.2;
+  line-height: 24px;
 }
 
 a {
@@ -120,6 +121,8 @@ nav .container {
 
 // Font awesome
 
+// Color
+
 // Display
 .visible-all-inline-block {
   display: inline-block;
@@ -141,7 +144,6 @@ nav .container {
 
 // Well
 .well {
-  background-color: $light-grey;
   border-color: $light-medium-grey;
   text-shadow: none;
 }
