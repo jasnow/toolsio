@@ -50,13 +50,11 @@
 }
 
 .btn-info {
-  background: $dark-light-grey;
-  border-color: $dark-light-grey;
-  color: $black;
+  background: $light-blue;
+  border-color: $light-blue;  
   &:hover, &.focus {
-    background-color: $light-medium-grey;
-    border-color: $light-medium-grey;
-    color: $black;
+    background-color: $blue;
+    border-color: $blue;
   }  
 }
 

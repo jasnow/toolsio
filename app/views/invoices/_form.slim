@@ -1,4 +1,6 @@
 = simple_form_for(@invoice,
+              html: { class: 'form-vertical' },
+              warpper: :vertical_form,
               warpper_mappings: { boolean: :vertical_boolean}) do |f|
   = f.input :company
   = f.input :salesperson
@@ -7,5 +9,7 @@
   .form-inline
     = f.input :date
 
-  = link_to I18n.t('button.cancel'), :back, class: 'btn btn-danger'  
-  = f.button :submit, class: 'btn-primary'
+  .form-inline  
+    .form-group
+      = link_to I18n.t('button.cancel'), :back, class: 'btn btn-danger'  
+    = f.button :submit, class: 'btn-primary'

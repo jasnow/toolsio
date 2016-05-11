@@ -12,10 +12,10 @@ end
 
 Rails.application.routes.draw do
   constraints(SubdomainPresent) do
-    root 'projects#index', as: :subdomain_root
+    root 'homepages#dashboard', as: :subdomain_root
     devise_for :users
     resources :users, only: :index
-    resources :projects, except: [:index, :show, :destroy]
+    resources :projects, except: [:show, :destroy]
     resources :invoices
   end
   # The priority is based upon order of creation: first created -> highest priority.
@@ -25,10 +25,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   constraints(SubdomainBlank) do
-    root 'welcome#index'
-    get 'welcome/about'
-    get 'welcome/contact'
-    get 'welcome/faq'
+    root 'homepages#landing'
+    get 'homepages/about'
+    get 'homepages/contact'
+    get 'homepages/faq'
     resources :accounts, only: [:new, :create]
   end
   

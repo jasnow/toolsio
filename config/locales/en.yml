@@ -36,10 +36,13 @@ en:
     sign_in: Sign in
   navigation:
     bizdesc: Bizdesc
-  welcome:
-    index:
+  homepages:
+    landing:
       time_tracker: Time Tracker
       slogan: Track your time with the most awesome time tracking app ever
+    dashboard:
+      header: Home
+      description: Welcome this is your dashboard  
   accounts:
     new:
       header: Create an Account
@@ -48,6 +51,7 @@ en:
     index:
       header: Projects
       no_entries: No entries yet!
+      create_new_project: Create new project
     new:
       header: New Project
       notice_create: "Project created!"
@@ -59,6 +63,7 @@ en:
       header: Users
       authorized_user: Authorized user
       invite_user: Invite User
+      email: Email
   invoices:
     index:
       header: Invoices  

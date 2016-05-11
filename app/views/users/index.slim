@@ -23,7 +23,6 @@
 
         = simple_form_for(User.new, url: user_invitation_path,
                 html: { class: 'form-inline'}) do |f|
-          .form-group
-            = f.input :email, placeholder: 'Email', label: false
+          = f.input :email, placeholder: I18n.t('users.index.email')
           .form-group  
             = f.button :submit, I18n.t('users.index.invite_user'), class: 'btn-primary'
