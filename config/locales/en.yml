@@ -51,7 +51,7 @@ en:
     index:
       header: Projects
       no_entries: No entries yet!
-      create_new_project: Create new project
+      create_new_project_button: Create new project
     new:
       header: New Project
       notice_create: "Project created!"
