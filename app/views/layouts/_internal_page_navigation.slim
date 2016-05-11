@@ -9,10 +9,6 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
     
     #navbar.navbar-collapse.collapse  
-      .pull-right.right-buttons
-        = link_to destroy_user_session_path, method: 'delete', class: 'btn btn-danger btn-sm navbar-btn' do
-          = icon ('sign-out')
-          span = I18n.t('button.sign_out')
       ul.nav.navbar-nav
         li class = ('active' if controller_name? 'invoices') 
           = link_to I18n.t('invoices.index.header'), invoices_path
@@ -22,3 +18,8 @@ nav.navbar.navbar-default.navbar-fixed-top
           = link_to I18n.t('users.index.header'), users_path
       ul.nav.navbar-nav.navbar-right
         li = link_to I18n.t('settings.index.header'), '#'
+      
+      .pull-right.right-buttons
+        = link_to destroy_user_session_path, method: 'delete', class: 'btn btn-danger btn-sm navbar-btn' do
+          = icon ('sign-out')
+          span = I18n.t('button.sign_out')  
