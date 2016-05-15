@@ -25,7 +25,7 @@ a {
   color: $light-turquoise;
   &:hover, &:focus {
     color: $dark-turquoise;
-  }  
+  }
 }
 
 // Footer
@@ -39,17 +39,17 @@ footer {
   color: $medium-grey;
 }
 
-// Flash 
+// Flash
 .alert-success {
   color: $dark-grass;
   background: $white-grass;
-  border-color: $x-light-grass; 
+  border-color: $x-light-grass;
 }
 
 .alert-danger {
   color: $dark-red;
   background: $white-red;
-  border-color: $x-light-red; 
+  border-color: $x-light-red;
 }
 
 .alert-notice {
@@ -105,27 +105,30 @@ footer {
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: $white-turquoise;
-  background-color: $dark-turquoise;
+  color: $dark-mid-night-blue;
+  background: transparent;
+  border-bottom: 2px solid $dark-mid-night-blue;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: $white-turquoise;
-  background-color: $dark-turquoise;
+  color: $dark-mid-night-blue;
+  background: transparent;
+  border-bottom: 2px solid $dark-mid-night-blue;
 }
 
-abbr, accronym { 
-	border-bottom: 0px !important; 
-} 
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 13px;
+}
 
 nav .container {
-  width: 100%;  
+  width: 100%;
 }
 
 .navbar-default {
   background-color: $turquoise;
   border-color: transparent;
-}   
+}
 
 // Font awesome
 
@@ -157,7 +160,7 @@ nav .container {
 }
 
 // Table
-.table { 
+.table {
   border: 1px solid $light-medium-grey;
   > thead {
     background-color: $light-dark-grey;
@@ -202,35 +205,35 @@ th, td {
   padding-left:0;
 }
 
-/* Extremely very extra small devices (phones, less than 480px) */   
-@media (max-width: $screen-xxxs-max) { 
+/* Extremely very extra small devices (phones, less than 480px) */
+@media (max-width: $screen-xxxs-max) {
   .visible-xxxs {
     display: inline-block !important;
   }
   .hidden-xxxs {
     display: none;
-  } 
+  }
 }
 
-/* Very extra small devices (phones, 320px, and upto small phones, 480px) */   
-@media (min-width: $screen-xxs-min) and (max-width: $screen-xxs-max) { 
+/* Very extra small devices (phones, 320px, and upto small phones, 480px) */
+@media (min-width: $screen-xxs-min) and (max-width: $screen-xxs-max) {
   .visible-xxxs {
     display: none;
   }
 }
 
-/* Very extra small devices (phones, less than 480px) */   
-@media (max-width: $screen-xxs-max) { 
+/* Very extra small devices (phones, less than 480px) */
+@media (max-width: $screen-xxs-max) {
   .visible-xxs {
     display: inline-block !important;
   }
   .hidden-xxs {
     display: none;
-  } 
+  }
 }
 
-/* Extra small devices (phones, 480px, and upto large phones, 768px) */   
-@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) { 
+/* Extra small devices (phones, 480px, and upto large phones, 768px) */
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
   .visible-xxxs {
     display: none;
   }
@@ -242,29 +245,29 @@ th, td {
   }
 }
 
-/* Extra small devices (phones, less than 768px) */   
-@media (max-width: $screen-xs-max) { 
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: $screen-xs-max) {
   .visible-xxs {
     display: none;
   }
 }
 
-/* Small devices (tablets, 768px and upto large desktops, 1200px and up) */   
+/* Small devices (tablets, 768px and upto large desktops, 1200px and up) */
 @media (min-width: $screen-sm-min) {
-  
-}
-
-/* Small devices (tablets, 768px and upto desktops, 992px) */   
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { 
 
 }
 
-/* Medium devices (desktops, 992px and upto large desktops, 1200px) */   
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) { 
+/* Small devices (tablets, 768px and upto desktops, 992px) */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 
 }
 
-/* Large devices (large desktops, 1200px and up) */   
-@media (min-width: $screen-lg-min) { 
+/* Medium devices (desktops, 992px and upto large desktops, 1200px) */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
 
 }
