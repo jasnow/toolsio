@@ -142,10 +142,11 @@ nav .container {
 // Panel
 .panel {
   @include border-radius(0);  
+  box-shadow: 1px 1px 4px rgba(0,0,0,.26);
 }
 
 .panel-default {
-  border-color: $light-grey;
+  border: 1px solid $light-grey;
 }
 
 .panel-default.light-grey {
@@ -166,11 +167,16 @@ nav .container {
   background-color: $white; 
   border: 1px solid $light-grey;
   @include border-radius(0);
+  box-shadow: 1px 1px 4px rgba(0,0,0,.26);
 }
 
 // Table
+table {
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
 .table {
-  border: 1px solid $light-medium-grey;
   > thead {
     background-color: $x-light-black;
     color: $x-light-grey;
@@ -181,16 +187,16 @@ nav .container {
   }
 }
 
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  border: none;
+}
+
 .table > thead > tr > th {
   border-bottom: 2px solid $light-turquoise;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: $light-grey;
-}
-
-.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-  border-top: 1px solid $light-medium-grey;
 }
 
 th, td {
