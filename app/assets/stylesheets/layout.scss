@@ -23,7 +23,7 @@ p {
 }
 
 a {
-  color: $light-turquoise;
+  color: $turquoise;
   &:hover, &:focus {
     color: $dark-turquoise;
   }
@@ -151,6 +151,14 @@ nav .container {
 .panel-default.light-grey {
   background-color: $light-grey;
   border-color: $light-grey;
+}
+
+.panel-title {
+  padding-bottom: 0;
+}
+
+.panel-footer {
+  background: $light-grey;  
 }
 
 // Well
