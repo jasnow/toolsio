@@ -51,6 +51,7 @@ en:
     index:
       header: Projects
       no_entries: No entries yet!
+      empty_projects: You don't have any projects yet
     new:
       header: New Project
       notice_create: "Project created!"
@@ -67,7 +68,7 @@ en:
     index:
       header: Invoices
       are_you_sure: Are you sure?
-      empty_invoices: You have no invoices
+      empty_invoices: You don't have any invoices yet
     new:
       header: New Invoice
       company: Company

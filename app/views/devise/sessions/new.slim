@@ -18,8 +18,8 @@
 
           - if devise_mapping.rememberable?
             = f.input :remember_me, as: :boolean
-
-          = f.button :submit, I18n.t('button.sign_in'), class: 'btn-primary btn-block btn-lg'
+          .btn-toolbar  
+            = f.button :submit, I18n.t('button.sign_in'), class: 'btn-primary btn-block btn-lg'
 
       .panel-footer
         = render "devise/shared/links"

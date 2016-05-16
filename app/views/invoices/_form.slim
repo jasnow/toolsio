@@ -9,7 +9,6 @@
   .form-inline
     = f.input :date
 
-  .form-inline  
-    .form-group
-      = link_to I18n.t('button.cancel'), :back, class: 'btn btn-danger'  
+  .btn-toolbar
+    = link_to I18n.t('button.cancel'), :back, class: 'btn btn-danger'  
     = f.button :submit, class: 'btn-primary'

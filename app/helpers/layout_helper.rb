@@ -16,15 +16,15 @@ module LayoutHelper
     @layout_flash.nil? ? true : @layout_flash
   end
 
-  def controller_name?(controller_name)
+  def is_controller_name?(controller_name)
     return true if controller.controller_name == controller_name
   end
 
-  def action_name?(action_name)
+  def is_action_name?(action_name)
     return true if controller.action_name == action_name
   end
 
-  def is_footer_visible
+  def is_footer_visible?
     first_condition = controller_name != "sessions" && (controller_name != "accounts" && action_name != "create" ) &&
     (controller_name != "invitaions" && action_name != "edit" )
 

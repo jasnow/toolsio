@@ -96,11 +96,19 @@ abbr, accronym {
   }
 }
 
+.btn-toolbar {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: $screen-xs-max) {
   .btn {
     display: block;
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -109,8 +117,5 @@ abbr, accronym {
   .form-inline label.datetime {
     display: block;
     margin-bottom: 0;
-  }
-  .btn {
-    margin-right: 5px;
   }
 }
