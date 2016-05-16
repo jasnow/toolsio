@@ -8,10 +8,10 @@ abbr, accronym {
 }
 
 .form-control {
-  border: 1px solid $dark-light-grey;
-  background-color: $light-grey;
-  border-radius: 2px;
+  border: 1px solid $light-grey;
+  background-color: $xx-light-grey;
   box-shadow: none;
+  font-size: 15px;
   &:focus {
     border-color: $turquoise;
     box-shadow: none;
@@ -20,7 +20,18 @@ abbr, accronym {
 
 // Buttons
 .btn {
-  @include border-radius(2px);
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 9px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  padding: 5px 10px !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  @include border-radius(3px);
 }
 
 .btn-primary {
@@ -67,16 +78,16 @@ abbr, accronym {
   background: $white;
   border-color: $white;
   &:hover, &.focus {
-    background-color: $light-light-grey;
-    border-color: $light-light-grey;
+    background-color: $xx-light-grey;
+    border-color: $xx-light-grey;
   }
 }
 
 .btn-black {
   @extend .btn-default;
   color: $white;
-  background: $light-mid-night-blue;
-  border-color: $light-mid-night-blue;
+  background: $mid-night-blue;
+  border-color: $mid-night-blue;
   &:hover, &.focus {
     color: $white;
     background-color: $mid-night-blue;
