@@ -40,7 +40,7 @@
     - else
       p.text-danger = I18n.t('invoices.index.empty_invoices')
 
-    = link_to I18n.t('invoices.index.new_invoice_button'), new_invoice_path, class: 'btn btn-primary'
+    = link_to I18n.t('invoices.new.header'), new_invoice_path, class: 'btn btn-primary'
 
     /= link_to "#confirmation-modal-container", class: 'btn btn-primary btn-lg', data: { toggle: 'modal' }
       |Launch demo modal
