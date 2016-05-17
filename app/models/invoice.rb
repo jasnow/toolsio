@@ -3,12 +3,12 @@ class Invoice < ActiveRecord::Base
   validates :salesperson, presence: true
   validates :interest_on_arrears, presence: true
   validates :date_of_an_invoice, presence: true
-  validates :deadline, absence: true
-  validates :payment_term, absence: true
+  validates :deadline, presence: false, allow_nil: true
+  validates :payment_term, presence: false, allow_nil: true
   validates :reference_number, presence: true, 
     uniqueness: true,
     numericality: { only_integer: true }
-  validates :decription, length: { maximum: 300,
+  validates :description, length: { maximum: 300,
     too_long: "%{count} characters is the maximum allowed" }
 
   validate :choose_xor_date
@@ -19,4 +19,5 @@ class Invoice < ActiveRecord::Base
         errors.add(:base, "Specify a deadline or a payment term, not both")
       end
     end  
+
 end

@@ -20,6 +20,11 @@ abbr, accronym {
   margin-right: 0;
 }
 
+// Customize date dropdowns take auto width 
+.date > .col-sm-9 .form-control {
+  display: inline-block;
+  width: auto;
+}
 
 // Buttons
 .btn {

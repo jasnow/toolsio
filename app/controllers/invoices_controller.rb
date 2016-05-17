@@ -49,7 +49,8 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:company, :salesperson, :tax, :date)
+    params.require(:invoice).permit(:customer, :salesperson, :date_of_an_invoice, 
+      :deadline, :payment_term, :interest_on_arrears, :reference_number, :description)
   end  
 
 end
