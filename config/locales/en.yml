@@ -72,9 +72,11 @@ en:
     new:
       header: New Invoice
       customer: Customer
-      date: Date
+      date_of_an_invoice: Date
       salesperson: Salesperosn
-      tax: Tax
+      deadline: Deadline
+      total: Total
+      status: Status 
       create_invoice_button: Create Invoice
     edit:
       header: Edit Invoice

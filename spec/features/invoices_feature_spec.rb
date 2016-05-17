@@ -15,14 +15,19 @@ describe 'invoices' do
 
     fill_in 'Company', with: 'ABB'
     fill_in 'Salesperson', with: 'Birhanu'
-    fill_in 'Tax', with: '12.5'
+    fill_in 'Interest on arrears', with: '12.5'
+    fill_in 'Reference number', with: '12345'
+    fill_in 'Description', with: 'Lorem lipsum'
 
-    select_date_and_time(DateTime.now, from: 'invoice_date')
+    #select_date_and_time(DateTime.now, from: 'invoice_deadline')
+    select_date(DateTime, from: 'invoice_deadline')
+    select_date(DateTime, from: 'invoice_date_of_an_invoice')
 
-    click_button I18n.t('invoices.new.create_invoice_button')
+    submit_form
     
     expect(page).to have_text I18n.t('invoices.create.notice_create')
     expect(page).to have_text 'ABB'
+    expect(page).to have_text '12345'
   end
 
   describe 'when user has invoice' do
@@ -43,13 +48,18 @@ describe 'invoices' do
     it 'allows invoice to be edited' do
       click_link I18n.t('button.edit')
       
-      fill_in 'Company', with: 'ABB'
+      fill_in 'Company', with: 'ABB edited'
       fill_in 'Salesperson', with: 'Birhanu'
-      fill_in 'Tax', with: '12.5'
-      select_date_and_time(DateTime.now, from: 'invoice_date')
+      fill_in 'Interest on arrears', with: '12.5'
+      fill_in 'Reference number', with: '12345'
+      fill_in 'Description', with: 'Lorem lipsum edited'
+
+      select_date(DateTime, from: 'invoice_deadline')
 
       submit_form
       expect(page).to have_text I18n.t('invoices.update.success_update')
+      expect(page).to have_text 'ABB edited'
+      expect(page).to have_text 'Lorem lipsum edited'
     end  
 
     it 'allows invoice to be deleted' do

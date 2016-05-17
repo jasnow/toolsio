@@ -1,13 +1,22 @@
 = simple_form_for(@invoice,
-              html: { class: 'form-vertical' },
-              warpper: :vertical_form,
-              warpper_mappings: { boolean: :vertical_boolean}) do |f|
-  = f.input :company
-  = f.input :salesperson
-  = f.input :tax
-  
+              html: { class: 'form-horizontal' },
+              warpper: :horizontal_form,
+              warpper_mappings: {  check_boxes: :horizontal_radio_and_checkboxes,
+                radio_buttons: :horizontal_radio_and_checkboxes,
+                file: :horizontal_file_input,
+                boolean: :horizontal_boolean} ) do |f|
+  = f.input :customer, wrapper: :horizontal_form
+  = f.input :salesperson, wrapper: :horizontal_form
+   
   .form-inline
-    = f.input :date
+    = f.input :date_of_an_invoice, wrapper: :horizontal_form
+  .from-inline
+    = f.input :deadline, wrapper: :horizontal_form
+
+  = f.input :payment_term, wrapper: :horizontal_form
+  = f.input :interest_on_arrears, wrapper: :horizontal_form
+  = f.input :reference_number, wrapper: :horizontal_form
+  = f.input :description, wrapper: :horizontal_form
 
   .btn-toolbar
     = link_to I18n.t('button.cancel'), :back, class: 'btn btn-danger'  

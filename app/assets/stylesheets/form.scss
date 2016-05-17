@@ -3,10 +3,6 @@ abbr, accronym {
 }
 
 // Input fields
-.form-inline {
-  margin-bottom: 15px;
-}
-
 .form-control {
   border: 1px solid $light-grey;
   background-color: $xx-light-grey;
@@ -18,6 +14,12 @@ abbr, accronym {
     box-shadow: none;
   }
 }
+
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 
 // Buttons
 .btn {
@@ -91,8 +93,8 @@ abbr, accronym {
   border-color: $mid-night-blue;
   &:hover, &.focus {
     color: $white;
-    background-color: $mid-night-blue;
-    border-color: $mid-night-blue;
+    background-color: $dark-mid-night-blue;
+    border-color: $dark-mid-night-blue;
   }
 }
 

@@ -5,24 +5,66 @@
       table.table-condensed.table-list-view
         tbody
           tr
-            td Date:
-            td = @invoice.date 
+            td 
+              Strong Date:
+            td = @invoice.date_of_an_invoice
           tr
-            td Company:
-            td = @invoice.company
-
+            td 
+              Strong Customer:
+            td = @invoice.customer
           tr
-            td Tax:
-            td = @invoice.tax
-
+            td 
+              Strong Salesperson:
+            td = @invoice.salesperson  
           tr
-            td Salesperson:
+            td 
+              Strong Date of an invoice:
+            td = @invoice.date_of_an_invoice
+          tr
+            td 
+              Strong Deadline:
+            td = @invoice.deadline
+          tr
+            td 
+              Strong Payment term:
+            td = @invoice.payment_term
+          tr
+            td 
+              Strong Interest on arreas:
+            td = @invoice.interest_on_arrears
+          tr
+            td 
+              Strong Referece number:
+            td = @invoice.reference_number
+          tr
+            td 
+              Strong Description:
+            td = @invoice.description      
+          tr
+            td 
+              Strong Salesperson:
             td 
               /= @invoice.employee.name 
     
-    /= link_to :back do
-      = icon ('angle-left') 
-      = I18n.t('button.back') 
-    .btn-toolbar
-      = link_to I18n.t('button.exit'), invoices_path, class: 'btn btn-black' 
-      = link_to I18n.t('button.edit'), edit_invoice_path(@invoice), class: 'btn btn-primary' 
+    .btn-toolbar      
+      = link_to :back, class: 'btn btn-black' do
+        = icon ('angle-left')
+        |&nbsp; 
+        = I18n.t('button.back') 
+      /= link_to invoices_path, class: 'btn btn-black' do   
+        = icon ('angle-left')
+        |&nbsp; 
+        = I18n.t('button.exit')         
+      /= link_to @invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('invoices.index.are_you_sure') } do
+        = icon('trash')
+        |&nbsp;
+        = I18n.t('button.delete')
+      = link_to '#confirmation-modal-container', class: 'btn btn-danger confirmation-button', data: { id: @invoice.id } do
+        = icon('trash')
+        |&nbsp;
+        = I18n.t('button.delete')
+
+      = link_to edit_invoice_path(@invoice), class: 'btn btn-primary' do
+        = icon('pencil-square-o white')
+        |&nbsp;
+        = I18n.t('button.edit')       
