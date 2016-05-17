@@ -71,7 +71,7 @@ en:
       empty_invoices: You don't have any invoices yet
     new:
       header: New Invoice
-      company: Company
+      customer: Customer
       date: Date
       salesperson: Salesperosn
       tax: Tax

@@ -7,7 +7,7 @@
           thead
             tr
               th = I18n.t('invoices.new.date')
-              th = I18n.t('invoices.new.company')
+              th = I18n.t('invoices.new.customer')
               th = I18n.t('invoices.new.salesperson')
               th = I18n.t('invoices.new.tax')
               th = I18n.t('button.show')
@@ -16,7 +16,7 @@
           tbody
             - @invoices.each do |invoice|
               tr
-                td = invoice.date.strftime("%m%d%Y")
+                td = invoice.date.strftime("%m/%d/%Y")
                 td = invoice.company
                 td = invoice.salesperson
                 td = invoice.tax
