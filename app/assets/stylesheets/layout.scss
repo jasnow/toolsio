@@ -142,7 +142,7 @@ nav .container {
 // Panel
 .panel {
   @include border-radius(0);  
-  box-shadow: 1px 1px 2px rgba(0,0,0,.26);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 .panel-default {
@@ -171,7 +171,7 @@ nav .container {
   background-color: $white; 
   border: 1px solid $light-grey;
   @include border-radius(0);
-  box-shadow: 1px 1px 2px rgba(0,0,0,.26);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 // Table
@@ -215,6 +215,20 @@ th, td {
   }
   thead > tr > th:first-child + th, tbody > tr td:first-child + td {
     text-align: left;
+  }
+}
+
+// Custom fieldset and legend
+.custom-fieldset {
+  border: 1px solid $light-grey !important;
+  margin: 15px 2px !important;
+  padding: 0.35em 0.625em 0.75em !important;
+  .custom-legend {
+    width: auto;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: $x-dark-medium-grey;
+    border-bottom: none;
   }
 }
 
