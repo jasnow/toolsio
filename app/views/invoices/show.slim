@@ -15,7 +15,8 @@
           tr
             td 
               Strong Salesperson:
-            td = @invoice.salesperson  
+            td 
+              /= @invoice.salesperson  
           tr
             td 
               Strong Date of an invoice:
@@ -34,7 +35,7 @@
             td = @invoice.interest_on_arrears
           tr
             td 
-              Strong Referece number:
+              Strong Reference number:
             td = @invoice.reference_number
           tr
             td 

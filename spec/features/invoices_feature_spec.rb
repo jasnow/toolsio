@@ -19,14 +19,17 @@ describe 'invoices' do
     fill_in 'Description', with: 'Lorem lipsum'
 
     #select_date_and_time(DateTime.now, from: 'invoice_deadline')
-    select_date(DateTime, from: 'invoice_date_of_an_invoice')
-    select_date(DateTime, from: 'invoice_deadline')
-
+    within('.invoice_date_of_an_invoice') do 
+      select_date(Date.today, from: 'invoice_date_of_an_invoice')
+    end
+    within('fieldset') do
+      select_date(Date.today, from: 'invoice_deadline')
+    end
+      
     submit_form
     
     expect(page).to have_text I18n.t('invoices.create.notice_create')
     expect(page).to have_text 'ABB'
-    expect(page).to have_text '12345'
   end
 
   it 'does not allow user to create invoices' do
@@ -39,9 +42,13 @@ describe 'invoices' do
     fill_in 'Description', with: 'Lorem lipsum'
 
     #select_date_and_time(DateTime.now, from: 'invoice_deadline')
-    select_date(DateTime, from: 'invoice_date_of_an_invoice')
-    select_date(DateTime, from: 'invoice_deadline')
-
+    within('.invoice_date_of_an_invoice') do 
+      select_date(Date.today, from: 'invoice_date_of_an_invoice')
+    end
+    within('fieldset') do
+      select_date(Date.today, from: 'invoice_deadline')
+    end
+      
     submit_form
     
     expect(page).to have_text 'is not a number'
@@ -71,8 +78,10 @@ describe 'invoices' do
       fill_in 'Reference number', with: '12345'
       fill_in 'Description', with: 'Lorem lipsum edited'
 
-      select_date(DateTime, from: 'invoice_deadline')
-
+      within('fieldset') do
+        select_date(Date.today, from: 'invoice_deadline')
+      end
+        
       submit_form
       expect(page).to have_text I18n.t('invoices.update.success_update')
       expect(page).to have_text 'ABB edited'

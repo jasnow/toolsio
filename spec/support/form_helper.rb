@@ -17,13 +17,13 @@ module FormHelper
     Capybara.app_host = "http://#{subdomain}.example.com"
   end
 
-  def select_date_and_time(date, options = {})
+  def select_date_and_time(datetime, options = {})
     field = options[:from]
-    select date.strftime('%Y'), from: "#{field}_1i" #year
-    select date.strftime('%B'), from: "#{field}_2i" #month
-    select date.strftime('%1d'), from: "#{field}_3i" #day 
-    select date.strftime('%H'), from: "#{field}_4i" #hour
-    select date.strftime('%M'), from: "#{field}_5i" #minute
+    select datetime.strftime('%Y'), from: "#{field}_1i" #year
+    select datetime.strftime('%B'), from: "#{field}_2i" #month
+    select datetime.strftime('%1d'), from: "#{field}_3i" #day 
+    select datetime.strftime('%H'), from: "#{field}_4i" #hour
+    select datetime.strftime('%M'), from: "#{field}_5i" #minute
   end
 
   def select_date(date, options = {})
