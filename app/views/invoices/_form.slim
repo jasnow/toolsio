@@ -7,11 +7,19 @@
                 boolean: :horizontal_boolean} ) do |f|
   = f.input :customer, wrapper: :horizontal_form
   = f.input :salesperson, wrapper: :horizontal_form
-   
-  = f.input :date_of_an_invoice, wrapper: :horizontal_form
-  = f.input :deadline, wrapper: :horizontal_form, prompt: '-'
-
-  = f.input :payment_term, wrapper: :horizontal_form
+  = f.input :date_of_an_invoice, wrapper: :horizontal_form, min: Date.today
+  
+  - unless @invoice.errors[:base].empty?
+    .has-error
+      = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today
+      = f.input :payment_term, wrapper: :horizontal_form
+      .col-sm-3
+      .col-sm-9
+        span.help-block = @invoice.errors[:base][0]
+  - else
+    = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today
+    = f.input :payment_term, wrapper: :horizontal_form    
+          
   = f.input :interest_on_arrears, wrapper: :horizontal_form
   = f.input :reference_number, wrapper: :horizontal_form
   = f.input :description, wrapper: :horizontal_form
