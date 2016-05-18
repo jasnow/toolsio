@@ -59,13 +59,14 @@ describe 'invoices' do
     before(:each) do
       @invoice = create(:invoice)
       visit invoices_path
+
+      click_link I18n.t('button.show')
     end   
 
     it 'allows invoice to be shown' do 
-      click_link I18n.t('button.show')
-      expect(page).to have_text @invoice.date 
+      expect(page).to have_text @invoice.date_of_an_invoice 
       expect(page).to have_text @invoice.customer
-      expect(page).to have_text @invoice.tax
+      expect(page).to have_text @invoice.reference_number
     
       expect(page).to have_link I18n.t('button.edit')
     end
@@ -75,7 +76,7 @@ describe 'invoices' do
       
       fill_in 'Customer', with: 'ABB edited'
       fill_in 'Interest on arrears', with: '12'
-      fill_in 'Reference number', with: '12345'
+      fill_in 'Reference number', with: '1234'
       fill_in 'Description', with: 'Lorem lipsum edited'
 
       within('fieldset') do
@@ -89,12 +90,11 @@ describe 'invoices' do
     end  
 
     it 'allows invoice to be deleted' do
-      within('tbody tr') do 
-        click_link I18n.t('button.delete')
-      end
-      expect(page).to have_text I18n.t('invoices.destroy.confirmation_msg')
+      click_link I18n.t('button.delete')
+      wait_until_modal_dialog do
+        expect(page).to have_text I18n.t('invoices.destroy.confirmation_msg')
      
-      wait_until_modal_footer do
+     
         page.has_css?('.modal-footer')
         
         within('.modal-footer') do 
@@ -102,7 +102,7 @@ describe 'invoices' do
         end
 
         expect(page).to have_text I18n.t('invoices.destroy.success_delete')
-        expect(page).to_not have_text @invoice.date
+        expect(page).to_not have_text @invoice.date_of_an_invoice
         expect(page).to_not have_text @invoice.customer
       end        
     end  
