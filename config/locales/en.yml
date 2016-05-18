@@ -52,6 +52,7 @@ en:
       header: Projects
       no_entries: No entries yet!
       empty_projects: You don't have any projects yet
+      create_new_project_button: Create new project
     new:
       header: New Project
       notice_create: "Project created!"
@@ -69,6 +70,7 @@ en:
       header: Invoices
       are_you_sure: Are you sure?
       empty_invoices: You don't have any invoices yet
+      add_new_invoice_button: Add new invoice
     new:
       header: New Invoice
       customer: Customer

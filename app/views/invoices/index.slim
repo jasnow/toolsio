@@ -3,7 +3,7 @@
     h1 = I18n.t('invoices.index.header')
     - unless @invoices.empty?
       .table-responsive
-        table.table.table-striped.no-margin
+        table.table.table-striped
           thead
             tr
               th = I18n.t('invoices.new.customer')
@@ -18,7 +18,8 @@
               tr
                 td = invoice.customer 
                 td = invoice.date_of_an_invoice.strftime("%m/%d/%Y")
-                td = invoice.salesperson
+                td 
+                  /= invoice.salesperson
                 td = invoice.deadline
                 td 
                 td 
@@ -35,7 +36,7 @@
       = link_to new_invoice_path, class: 'btn btn-primary'
         = icon('plus')
         |&nbsp;
-        = I18n.t('invoices.new.header')
+        = I18n.t('invoices.index.add_new_invoice_button')
 
     /= link_to "#confirmation-modal-container", class: 'btn btn-primary btn-lg', data: { toggle: 'modal' }
       |Launch demo modal

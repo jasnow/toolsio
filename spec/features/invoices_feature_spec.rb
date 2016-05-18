@@ -11,17 +11,16 @@ describe 'invoices' do
 
   it 'allows user to create invoices' do
     visit invoices_path
-    click_link I18n.t('invoices.index.new_invoice_button')
+    click_link I18n.t('invoices.index.add_new_invoice_button')
 
-    fill_in 'Company', with: 'ABB'
-    fill_in 'Salesperson', with: 'Birhanu'
-    fill_in 'Interest on arrears', with: '12.5'
-    fill_in 'Reference number', with: '12345'
+    fill_in 'Customer', with: 'ABB'
+    fill_in 'Interest on arrears', with: '12'
+    fill_in 'Reference number', with: '1234'
     fill_in 'Description', with: 'Lorem lipsum'
 
     #select_date_and_time(DateTime.now, from: 'invoice_deadline')
-    select_date(DateTime, from: 'invoice_deadline')
     select_date(DateTime, from: 'invoice_date_of_an_invoice')
+    select_date(DateTime, from: 'invoice_deadline')
 
     submit_form
     
@@ -30,6 +29,25 @@ describe 'invoices' do
     expect(page).to have_text '12345'
   end
 
+  it 'does not allow user to create invoices' do
+    visit invoices_path
+    click_link I18n.t('invoices.index.add_new_invoice_button')
+
+    fill_in 'Customer', with: 'ABB'
+    fill_in 'Interest on arrears', with: '12'
+    fill_in 'Reference number', with: 'abcd'
+    fill_in 'Description', with: 'Lorem lipsum'
+
+    #select_date_and_time(DateTime.now, from: 'invoice_deadline')
+    select_date(DateTime, from: 'invoice_date_of_an_invoice')
+    select_date(DateTime, from: 'invoice_deadline')
+
+    submit_form
+    
+    expect(page).to have_text 'is not a number'
+    expect(page).to_not have_text 'ABB'
+  end 
+    
   describe 'when user has invoice' do
     before(:each) do
       @invoice = create(:invoice)
@@ -39,7 +57,7 @@ describe 'invoices' do
     it 'allows invoice to be shown' do 
       click_link I18n.t('button.show')
       expect(page).to have_text @invoice.date 
-      expect(page).to have_text @invoice.company
+      expect(page).to have_text @invoice.customer
       expect(page).to have_text @invoice.tax
     
       expect(page).to have_link I18n.t('button.edit')
@@ -48,9 +66,8 @@ describe 'invoices' do
     it 'allows invoice to be edited' do
       click_link I18n.t('button.edit')
       
-      fill_in 'Company', with: 'ABB edited'
-      fill_in 'Salesperson', with: 'Birhanu'
-      fill_in 'Interest on arrears', with: '12.5'
+      fill_in 'Customer', with: 'ABB edited'
+      fill_in 'Interest on arrears', with: '12'
       fill_in 'Reference number', with: '12345'
       fill_in 'Description', with: 'Lorem lipsum edited'
 
@@ -77,14 +94,14 @@ describe 'invoices' do
 
         expect(page).to have_text I18n.t('invoices.destroy.success_delete')
         expect(page).to_not have_text @invoice.date
-        expect(page).to_not have_text @invoice.company
+        expect(page).to_not have_text @invoice.customer
       end        
     end  
   end  
 
   it 'displays invoice validations' do
     visit invoices_path
-    click_link I18n.t('invoices.index.new_invoice_button')
+    click_link I18n.t('invoices.index.add_new_invoice_button')
 
     click_button I18n.t('invoices.new.create_invoice_button')
     expect(page).to have_text "can't be blank"
