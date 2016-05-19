@@ -14,9 +14,9 @@ describe 'invoices' do
     click_link I18n.t('invoices.index.add_new_invoice_button')
 
     fill_in 'Customer', with: 'ABB'
-    fill_in 'Interest on arrears', with: '12'
     fill_in 'Reference number', with: '1234'
     fill_in 'Description', with: 'Lorem lipsum'
+    fill_in 'Interest on arrears', with: '12'
 
     #select_date_and_time(DateTime.now, from: 'invoice_deadline')
     within('.invoice_date_of_an_invoice') do 
@@ -37,14 +37,11 @@ describe 'invoices' do
     click_link I18n.t('invoices.index.add_new_invoice_button')
 
     fill_in 'Customer', with: 'ABB'
-    fill_in 'Interest on arrears', with: '12'
+    fill_in 'Payment term (in days)', with: '32'
+    fill_in 'Interest on arrears (in %)', with: '101'
     fill_in 'Reference number', with: 'abcd'
     fill_in 'Description', with: 'Lorem lipsum'
 
-    #select_date_and_time(DateTime.now, from: 'invoice_deadline')
-    within('.invoice_date_of_an_invoice') do 
-      select_date(Date.today, from: 'invoice_date_of_an_invoice')
-    end
     within('fieldset') do
       select_date(Date.today, from: 'invoice_deadline')
     end
@@ -52,14 +49,15 @@ describe 'invoices' do
     submit_form
     
     expect(page).to have_text 'is not a number'
-    expect(page).to_not have_text 'ABB'
+    expect(page).to have_text 'If you prefer to give payment term more than 31 days use the deadline dropdown bellow to select dates from comming months'
+    expect(page).to have_text 'You cant give interest on arrears bellow 0 or more than 100%'
   end 
-    
+  
   describe 'when user has invoice' do
     before(:each) do
-      @invoice = create(:invoice)
+      @invoice = create(:invoice, deadline: '2016-02-20', payment_term: '') 
       visit invoices_path
-
+   
       click_link I18n.t('button.show')
     end   
 
@@ -91,12 +89,11 @@ describe 'invoices' do
 
     it 'allows invoice to be deleted' do
       click_link I18n.t('button.delete')
-      wait_until_modal_dialog do
-        expect(page).to have_text I18n.t('invoices.destroy.confirmation_msg')
-     
+      wait_until_javascript_loads do
+        expect(page).to have_text I18n.t('invoices.destroy.confirmation_msg')     
      
         page.has_css?('.modal-footer')
-        
+        binding.pry
         within('.modal-footer') do 
           click_link I18n.t('button.delete')
         end
@@ -104,7 +101,7 @@ describe 'invoices' do
         expect(page).to have_text I18n.t('invoices.destroy.success_delete')
         expect(page).to_not have_text @invoice.date_of_an_invoice
         expect(page).to_not have_text @invoice.customer
-      end        
+      end       
     end  
   end  
 

@@ -12,6 +12,7 @@ def drop_schemas
   end
 end
 
-def wait_until_modal_dialog
+def wait_until_javascript_loads
+  #classes_on_page = ['.modal-dialog', '.second-class-param'] 
   page.has_css?('.modal-dialog')
 end 

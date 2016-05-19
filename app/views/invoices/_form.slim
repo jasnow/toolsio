@@ -10,19 +10,19 @@
   = f.input :date_of_an_invoice, wrapper: :horizontal_form, min: Date.today
   
   fieldset.custom-fieldset 
-    legend.custom-legend Choose either a Deadline or Payment term
+    legend.custom-legend Choose either a Payment term or Deadline
     - unless @invoice.errors[:base].empty?
       .has-error
+        = f.input :payment_term, wrapper: :horizontal_form, label: 'Payment term \n (in days)'
         = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today
-        = f.input :payment_term, wrapper: :horizontal_form
         .col-sm-3
         .col-sm-9
           span.help-block = @invoice.errors[:base][0]
     - else
-      = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today
-      = f.input :payment_term, wrapper: :horizontal_form    
+      = f.input :payment_term, wrapper: :horizontal_form, label: 'Payment term (in days)'
+      = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today  
           
-  = f.input :interest_on_arrears, wrapper: :horizontal_form
+  = f.input :interest_on_arrears, wrapper: :horizontal_form, label: 'Interest on arrears (in %)'
   = f.input :reference_number, wrapper: :horizontal_form
   = f.input :description, wrapper: :horizontal_form
 
