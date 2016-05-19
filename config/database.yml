@@ -9,7 +9,7 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  database: timetracker_development
+  database: toolsio_development
   encoding: unicode
   username: admin
   password: 1234
@@ -18,7 +18,7 @@ development:
 
 test:
   <<: *default
-  database: timetracker_test
+  database: toolsio_test
   encoding: unicode
   username: admin
   password: 1234
@@ -28,7 +28,7 @@ test:
 
 production:
   <<: *default
-  database: timetracker_production
+  database: toolsio_production
   username: timetracker
   password: <%= ENV['TIME_TRACKER_DATABASE_PASSWORD'] %>
   encoding: unicode

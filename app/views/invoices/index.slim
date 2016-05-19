@@ -1,36 +1,40 @@
 .row
   .col-md-12
     h1 = I18n.t('invoices.index.header')
-    table.table.table-striped
-      thead
-        tr
-          th = I18n.t('invoices.new.date')
-          th = I18n.t('invoices.new.company')
-          th = I18n.t('invoices.new.salesperson')
-          th = I18n.t('invoices.new.tax')
-          th = I18n.t('button.show')
-          th = I18n.t('button.edit')
-          th = I18n.t('button.delete')
-      tbody
-        - @invoices.each do |invoice|
-          tr
-            td = invoice.date.strftime("%m%d%Y")
-            td = invoice.company
-            td = invoice.salesperson
-            td = invoice.tax
-            td 
-              = link_to invoice, class: 'btn btn-info btn-sm' do
-                = icon('eye')
-                span = I18n.t('button.show')
-              
-            td 
-              = link_to edit_invoice_path(invoice), class: 'btn btn-success btn-sm' do
-                = icon('pencil-square-o white')
-                span = I18n.t('button.edit') 
+    - unless @invoices.empty?
+      .table-responsive
+        table.table.table-striped
+          thead
+            tr
+              th = I18n.t('invoices.new.customer')
+              th = I18n.t('invoices.new.date_of_an_invoice')
+              th = I18n.t('invoices.new.salesperson')
+              th = I18n.t('invoices.new.deadline')
+              th = I18n.t('invoices.new.total')
+              th = I18n.t('invoices.new.status')
+              th = I18n.t('button.show')
+          tbody
+            - @invoices.each do |invoice|
+              tr
+                td = invoice.customer 
+                td = invoice.date_of_an_invoice.strftime("%m/%d/%Y")
+                td 
+                  /= invoice.salesperson
+                td = invoice.deadline
+                td 
+                td 
+                td
+                  = link_to invoice, class: 'btn btn-info btn-sm' do
+                    = icon('eye')
+                    |&nbsp; 
+                    = I18n.t('button.show')
+     
+    - else
+      p.text-danger = I18n.t('invoices.index.empty_invoices')
 
-            td 
-              = link_to invoice, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: I18n.t('controllers.invoices.index.are_you_sure') }     
-                = icon('trash')
-                span = I18n.t('button.delete')
+    .btn-toolbar  
+      = link_to new_invoice_path, class: 'btn btn-primary'
+        = icon('plus')
+        |&nbsp;
+        = I18n.t('invoices.index.add_new_invoice_button')
 
-    = link_to I18n.t('invoices.index.new_invoice_button'), new_invoice_path, class: 'btn btn-primary'

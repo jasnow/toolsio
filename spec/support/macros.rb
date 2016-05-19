@@ -12,20 +12,7 @@ def drop_schemas
   end
 end
 
-# added here cos we'r using this macro in multiple spec files,
-# eventhough it isn't related with the above macro we can still keep it here
-def sign_user_in(user, opts={})
-  if opts[:subdomain]
-    visit new_user_session_url(subdomain: opts[:subdomain])
-  else
-    visit new_user_session_path
-  end
-
-  fill_in 'Email', with: user.email
-  fill_in 'Password', with: (opts[:password] || user.password)
-  click_button 'Sign in'
-end
-
-def set_subdomain(subdomain)
-  Capybara.app_host = "http://#{subdomain}.example.com"
-end
+def wait_until_javascript_loads
+  #classes_on_page = ['.modal-dialog', '.second-class-param'] 
+  page.has_css?('.modal-dialog')
+end 

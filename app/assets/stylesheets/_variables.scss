@@ -2,12 +2,13 @@
 $black: #000000;
 $white: #ffffff;
 
-$body-color: #4a4a4a;
+$body-background-color: #f1f1f1;
+$body-font-color: #4a4a4a;
 
 $white-turquoise: #cce7ea;
-$light-turquoise: #00b4c8;
+$light-turquoise: #a1d4d6;
 $turquoise: #038b98;
-$dark-turquoise: #007882;
+$dark-turquoise: #165b61;
 
 $white-grass: #d8e3b6;
 $x-light-grass: #94A80D;
@@ -37,26 +38,31 @@ $light-beige: #FFF5DD;
 $beige: #ffecbf;
 $dark-beige: #DAC084;
 
-$dark-grey: #333333;
-$light-dark-grey: #555555;
-$x-light-dark-grey: #666666;
+$x-dark-medium-grey: #b6b6b6;
+$dark-medium-grey: #c3c3c3;
+$medium-grey: #cccccc;
+$light-medium-grey: #d6d6d6;
 
-$light-medium-grey: #cbcbcb;
-$medium-grey: #bcbcbc;
-$dark-medium-grey: #999999;
+$light-grey: #e0e0e0;
+$x-light-grey: #ecebe8;
+$xx-light-grey: #f1f1f1;
 
-$light-light-grey: #f8f8f8;
-$light-grey: #f0f0f0; 
-$dark-light-grey: #e0e0e0;
+$light-black: #333333;
+$x-light-black: #555555;
+$xx-light-black: #666666;
 
 $dark-mid-night-blue: #1f2224;
 $mid-night-blue: #3b3f45;
-$light-mid-night-blue: #393F43;
+$light-mid-night-blue: #5e656e;
 $x-light-mid-night-blue: #989ea7;
 
 // Fonts
 
 // Responsive
+$screen-xxxs-max: 320px;
+$screen-xxs-min: 320px;
+$screen-xxs-max: 480px;
+$screen-xs-min: 480px;
 $screen-xs-max: 768px;
 $screen-sm-min: 768px;
 $screen-sm-max: 992px;

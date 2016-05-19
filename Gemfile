@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
@@ -23,7 +23,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 
 gem 'simple_form'
-gem 'rails_12factor'
+
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'pry-remote'
@@ -39,4 +40,8 @@ group :development, :test do
   gem 'email_spec'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :production do
+  gem 'rails_12factor'
 end

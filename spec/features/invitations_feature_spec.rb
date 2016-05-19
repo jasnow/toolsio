@@ -27,7 +27,7 @@ describe 'invitations' do
   describe 'when user is invited' do
     before do
       fill_in 'Email', with: 'birhanu@bizdesc.com'
-      click_button 'Invite User'
+      click_button I18n.t('users.index.invite_user')
     end
 
     it 'shows invitation when user is invited' do

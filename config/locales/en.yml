@@ -24,6 +24,11 @@ en:
     save: Save
     cancel: Cancel
     next: Next
+    delete: Delete
+    show: Show
+    edit: Edit
+    back: Back
+    exit: Exit
     ok: OK
     create_account: Create Account
     invite_user: Invite user
@@ -31,18 +36,23 @@ en:
     sign_in: Sign in
   navigation:
     bizdesc: Bizdesc
-  welcome:
-    index:
+  homepages:
+    landing:
       time_tracker: Time Tracker
       slogan: Track your time with the most awesome time tracking app ever
+    dashboard:
+      header: Home
+      description: Welcome this is your dashboard
   accounts:
     new:
       header: Create an Account
-      prompt: All fields are mandatory. Enter correct information. 
+      prompt: All fields are mandatory. Enter correct information.
   projects:
     index:
       header: Projects
       no_entries: No entries yet!
+      empty_projects: You don't have any projects yet
+      create_new_project_button: Create new project
     new:
       header: New Project
       notice_create: "Project created!"
@@ -54,25 +64,36 @@ en:
       header: Users
       authorized_user: Authorized user
       invite_user: Invite User
+      email: Email
   invoices:
     index:
-      header: Invoices  
-      new_invoice_button: New Invoice
-      are_you_sure: Are you sure? 
+      header: Invoices
+      are_you_sure: Are you sure?
+      empty_invoices: You don't have any invoices yet
+      add_new_invoice_button: Add new invoice
     new:
       header: New Invoice
-      company: Company
-      date: Date
-      salesperson: Salesperosn 
-      tax: Tax
+      customer: Customer
+      date_of_an_invoice: Date
+      salesperson: Salesperosn
+      deadline: Deadline
+      total: Total
+      status: Status 
       create_invoice_button: Create Invoice
-    create:  
+    edit:
+      header: Edit Invoice
+    show:
+      header: Show Invoice
+    create:
       notice_create: "Invoice created!"
-    update:  
-      notice_update: "Invoice updated!"
+    update:
+      success_update: "Invoice updated!"
     destroy:
-      notice_delete: "Invoice deleted"  
+      success_delete: "Invoice deleted"
+      error_delete: "Invoice couldn't be deleted, try again after refreshing the page"
+      confirmation_msg: Are you sure to delete this invoice?
+      warning_msg: If you click delete, the invoice will be deleted.
   settings:
     index:
       header: Settings
-        
+

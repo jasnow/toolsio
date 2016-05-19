@@ -5,3 +5,43 @@
   text-decoration: none;
   i { color: $brand-primary; }
 }
+
+.headline-top-page {
+  margin-top: 30px;
+}
+
+h1 {
+  padding-top: 6px;
+  padding-bottom: 22px;
+  line-height: 125%;
+  margin: 0 auto;
+  letter-spacing: -0.2px;
+}
+
+h2 {
+  padding-top: 4px;
+  padding-bottom: 18px;
+  line-height: 115%;
+  margin: 0 auto;
+  letter-spacing: -0.2px;
+}
+
+h3 {
+  padding-top: 2px;
+  padding-bottom: 14px;
+  line-height: 105%;
+  margin: 0 auto;
+  letter-spacing: -0.2px;
+}
+
+p {
+  font-size: 15px;
+  color: inherit;
+  margin: 0 auto;
+  line-height: 24px;
+  margin-bottom: 12px; 
+}
+
+.text-danger {
+  color: $red;
+}

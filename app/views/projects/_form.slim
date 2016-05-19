@@ -7,4 +7,5 @@
   - if @project.persisted? 
     = f.input :archived, as: :boolean 
   
-  = f.button :submit, class: 'btn-primary'        
+  .btn-toolbar
+    = f.button :submit, class: 'btn-primary'        

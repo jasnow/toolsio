@@ -3,8 +3,9 @@ html, body {
 }
 
 body {
+  background-color: $body-background-color; 
   padding-top: 70px;
-  color: $light-mid-night-blue;
+  color: $body-font-color;
 }
 
 #wrapper {
@@ -18,14 +19,14 @@ body {
 
 p {
   font-family: "Open Sans","HelveticaNeue","Helvetica","Arial",sans-serif;
-  line-height: 1.2;
+  padding-bottom: 8px;
 }
 
 a {
-  color: $light-turquoise;
+  color: $turquoise;
   &:hover, &:focus {
     color: $dark-turquoise;
-  }  
+  }
 }
 
 // Footer
@@ -39,24 +40,24 @@ footer {
   color: $medium-grey;
 }
 
-// Flash 
+// Flash
 .alert-success {
   color: $dark-grass;
   background: $white-grass;
-  border-color: $x-light-grass; 
+  border-color: $x-light-grass;
 }
 
 .alert-danger {
   color: $dark-red;
   background: $white-red;
-  border-color: $x-light-red; 
+  border-color: $x-light-red;
 }
 
-.flash-notice {
+.alert-notice {
   @extend .alert-success;
 }
 
-.flash-alert, #flash-alert {
+.alert-alert {
   @extend .alert-danger;
 }
 
@@ -74,6 +75,17 @@ footer {
 }
 
 // Navabars
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+navbar-fixed-top {
+  top: 0;
+  border-width: 0;
+}
+
 .navbar-default .navbar-brand {
   color: $white-turquoise;
   &:hover, &:focus {
@@ -81,8 +93,13 @@ footer {
   }
 }
 
-.navbar .right-buttons {
-  margin-left: 20px;
+.navbar-right .dropdown-toggle {
+  color: $white;
+  font-size: inherit;
+  margin-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -90,54 +107,92 @@ footer {
   text-transform: uppercase;
 }
 
-.navbar-default .navbar-nav > li:hover, .navbar-default .navbar-nav > li:focus {
-  background-color: $light-mid-night-blue;
-  > a {
-    color: $light-grey;
-  }  
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $white;
+  background: $dark-turquoise;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: $light-mid-night-blue;
-  color: $light-grey;
+  color: $white;
+  background: $dark-turquoise;
 }
 
-abbr, accronym { 
-	border-bottom: 0px !important; 
-} 
-
 nav .container {
-  width: 100%;  
+  width: 100%;
 }
 
 .navbar-default {
   background-color: $turquoise;
   border-color: transparent;
-}   
+}
 
 // Font awesome
-a .fa {
-  margin-right: 3px;
+
+// Color
+
+// Display
+.visible-all-inline-block {
+  display: inline-block;
+}
+
+.visible-all-inline {
+  display: inline;
 }
 
 // Panel
+.panel {
+  @include border-radius(0);  
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
 .panel-default {
-  border-color: $dark-light-grey;
+  border: 1px solid $light-grey;
 }
 
 .panel-default.light-grey {
   background-color: $light-grey;
-  border-color: $dark-light-grey;
+  border-color: $light-grey;
+}
+
+.panel-title {
+  padding-bottom: 0;
+}
+
+.panel-body {
+  padding: 20px;  
+}
+
+.panel-footer {
+  background: $light-grey;  
+}
+
+// Well
+.well {
+  background-color: $white; 
+  border: 1px solid $light-grey;
+  @include border-radius(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 
 // Table
-.table { 
-  border: 1px solid $light-medium-grey;
+table {
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+.table {
   > thead {
-    background-color: $light-dark-grey;
-    color: $light-grey;
-    border: 1px solid $light-dark-grey;
+    background-color: $x-light-black;
+    color: $x-light-grey;
+    border: 1px solid $x-light-black;
   }
+  > tbody {
+    background-color: $white;
+  }
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  border: none;
 }
 
 .table > thead > tr > th {
@@ -148,40 +203,104 @@ a .fa {
   background-color: $light-grey;
 }
 
-.table-striped > tbody > tr:nth-of-type(even) {
-  background-color: $white;
-}
-
-.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-  border-top: 1px solid $light-medium-grey;
-}
-
 th, td {
   text-align: center;
+  vertical-align: middle !important;
 }
 
-/* Small devices (tablets, 768px) */
+// Custom table for list
+.table-list-view {
+  thead > tr > th:first-child, tbody > tr td:first-child {
+    text-align: right;
+  }
+  thead > tr > th:first-child + th, tbody > tr td:first-child + td {
+    text-align: left;
+  }
+}
+
+// Custom fieldset and legend
+.custom-fieldset {
+  border: 1px solid $light-grey !important;
+  margin: 15px 2px !important;
+  padding: 0.35em 0.625em 0.75em !important;
+  .custom-legend {
+    width: auto;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: $x-dark-medium-grey;
+    border-bottom: none;
+  }
+}
+
+// Padding
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
+/* Extremely very extra small devices (phones, less than 480px) */
+@media (max-width: $screen-xxxs-max) {
+  .visible-xxxs {
+    display: inline-block !important;
+  }
+  .hidden-xxxs {
+    display: none;
+  }
+}
+
+/* Very extra small devices (phones, 320px, and upto small phones, 480px) */
+@media (min-width: $screen-xxs-min) and (max-width: $screen-xxs-max) {
+  .visible-xxxs {
+    display: none;
+  }
+}
+
+/* Very extra small devices (phones, less than 480px) */
+@media (max-width: $screen-xxs-max) {
+  .visible-xxs {
+    display: inline-block !important;
+  }
+  .hidden-xxs {
+    display: none;
+  }
+}
+
+/* Extra small devices (phones, 480px, and upto large phones, 768px) */
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .visible-xxxs {
+    display: none;
+  }
+  .visible-xxxs {
+    display: none;
+  }
+  .visible-xxs {
+    display: none;
+  }
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: $screen-xs-max) {
+  .visible-xxs {
+    display: none;
+  }
+}
+
+/* Small devices (tablets, 768px and upto large desktops, 1200px and up) */
 @media (min-width: $screen-sm-min) {
-  .form-inline label.datetime {
-    display: block;
-    margin-bottom: 0; 
-  }  
+
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 950px;
-  }
+/* Small devices (tablets, 768px and upto desktops, 992px) */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+
 }
 
-@media (min-width: 992px) {
-  .container {
-    width: 1170px;
-  }
+/* Medium devices (desktops, 992px and upto large desktops, 1200px) */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1370px;
-  }
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }

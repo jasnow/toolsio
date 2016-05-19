@@ -7,8 +7,10 @@
 
 // Local styles
 @import "variables";
+@import "mixins";
 
 @import "layout";
 @import "authentication";
 @import "page";
-@import "typography"
+@import "typography";
+@import "form";

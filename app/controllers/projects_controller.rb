@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      redirect_to root_path, notice: I18n.t('projects.new.notice_create')
+      redirect_to projects_path, notice: I18n.t('projects.new.notice_create')
     else
       render :new
     end
@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
     @Project = Project.find(params[:id])
 
     if @Project.update(project_params)
-      redirect_to root_path, notice: I18n.t('projects.update.notice_update')
+      redirect_to projects_path, notice: I18n.t('projects.update.notice_update')
     else
       render :edit
     end

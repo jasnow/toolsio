@@ -16,6 +16,7 @@ RSpec.configure do |config|
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
   config.include Devise::TestHelpers, type: :controller
+  config.include FormHelper, type: :feature
   config.order = "random"
   config.infer_spec_type_from_file_location!
 
@@ -36,5 +37,12 @@ RSpec.configure do |config|
     drop_schemas
     Capybara.app_host = 'http://example.com'
     reset_mailer
+  end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
 end

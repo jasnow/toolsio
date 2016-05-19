@@ -5,7 +5,9 @@
         h2.panel-title = I18n.t('accounts.new.header')
       .panel-body
         h4 = I18n.t('accounts.new.prompt')
-        = simple_form_for @account, :url => {:action => 'create'} do |f|
+        = simple_form_for(@account, :url => {:action => 'create'},
+                  html: { class: 'form-vertical' },
+                  warpper: :vertical_form) do |f|
           = f.fields_for :owner do |o|
             = o.input :first_name
             = o.input :second_name
@@ -16,6 +18,7 @@
           = f.input :subdomain do
             .input-group
               = f.input_field :subdomain, class: 'form-control'
-              span.input-group-addon .timetracker.dev
+              span.input-group-addon .toolsio.com
 
-          = f.button :submit, class: 'btn-primary'
+          .btn-toolbar    
+            = f.button :submit, class: 'btn-primary'
