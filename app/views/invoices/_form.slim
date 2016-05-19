@@ -7,22 +7,22 @@
                 boolean: :horizontal_boolean} ) do |f|
   = f.input :customer, wrapper: :horizontal_form
   /= f.input :salesperson, wrapper: :horizontal_form
-  = f.input :date_of_an_invoice, wrapper: :horizontal_form, min: Date.today
+  = f.input :date_of_an_invoice, as: :date, start_year: Date.today.year, order: [:day, :month, :year], wrapper: :horizontal_form
   
   fieldset.custom-fieldset 
     legend.custom-legend Choose either a Payment term or Deadline
     - unless @invoice.errors[:base].empty?
       .has-error
-        = f.input :payment_term, wrapper: :horizontal_form, label: 'Payment term \n (in days)'
-        = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today
+        = f.input :payment_term, collection: 1..31, prompt: 'Select days', label: 'Payment term \n (in days)', wrapper: :horizontal_form
+        = f.input :deadline, as: :date, start_year: Date.today.year,  order: [:day, :month, :year], wrapper: :horizontal_form, prompt: '-'
         .col-sm-3
         .col-sm-9
           span.help-block = @invoice.errors[:base][0]
     - else
-      = f.input :payment_term, wrapper: :horizontal_form, label: 'Payment term (in days)'
-      = f.input :deadline, wrapper: :horizontal_form, prompt: '-', min: Date.today  
+      = f.input :payment_term, collection: 1..31, prompt: 'Select days', label: 'Payment term (in days)', wrapper: :horizontal_form
+      = f.input :deadline, as: :date, start_year: Date.today.year,  order: [:day, :month, :year], wrapper: :horizontal_form, prompt: '-'  
           
-  = f.input :interest_on_arrears, wrapper: :horizontal_form, label: 'Interest on arrears (in %)'
+  = f.input :interest_on_arrears, wrapper: :horizontal_form, label: 'Interest on arrears (in %)', input_html: { min: 0, max: 100 }
   = f.input :reference_number, wrapper: :horizontal_form
   = f.input :description, wrapper: :horizontal_form
 

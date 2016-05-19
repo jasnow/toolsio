@@ -2,14 +2,12 @@ class Invoice < ActiveRecord::Base
   validates :customer, presence: true
   validates :date_of_an_invoice, presence: true
   validates :deadline, presence: true, allow_nil: true
-  validates :payment_term, presence: true, allow_nil: true,
-    inclusion: { in: 1..31, message: 'If you prefer to give payment term more than 31 days use the deadline dropdown bellow to select 
-      dates from comming months' }
-  validates :interest_on_arrears, numericality: true, allow_nil: true,
-    inclusion: { in: 1..100, message: 'You cant give interest on arrears bellow 0 or more than 100%' }
+  validates :payment_term, presence: true, allow_nil: true
+  validates :interest_on_arrears, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100, message: 'Interest on arrears 
+    percentage should be between 0 and 100' }, allow_nil: true
   validates :reference_number, presence: true, 
     uniqueness: true,
-    numericality: { only_integer: true }
+    numericality: { greater_than_or_equal_to: 0 }
   validates :description, length: { maximum: 300,
     too_long: "%{count} characters is the maximum allowed" }
 

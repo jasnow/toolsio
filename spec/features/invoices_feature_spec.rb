@@ -16,13 +16,12 @@ describe 'invoices' do
     fill_in 'Customer', with: 'ABB'
     fill_in 'Reference number', with: '1234'
     fill_in 'Description', with: 'Lorem lipsum'
-    fill_in 'Interest on arrears', with: '12'
-
-    #select_date_and_time(DateTime.now, from: 'invoice_deadline')
+    
     within('.invoice_date_of_an_invoice') do 
       select_date(Date.today, from: 'invoice_date_of_an_invoice')
     end
-    within('fieldset') do
+    #select_date_and_time(DateTime.now, from: 'invoice_deadline')
+    within('.invoice_deadline') do
       select_date(Date.today, from: 'invoice_deadline')
     end
       
@@ -37,20 +36,25 @@ describe 'invoices' do
     click_link I18n.t('invoices.index.add_new_invoice_button')
 
     fill_in 'Customer', with: 'ABB'
-    fill_in 'Payment term (in days)', with: '32'
-    fill_in 'Interest on arrears (in %)', with: '101'
     fill_in 'Reference number', with: 'abcd'
     fill_in 'Description', with: 'Lorem lipsum'
 
-    within('fieldset') do
+    within('.invoice_payment_term') do 
+      select_generic(13, from: 'invoice_payment_term')
+    end 
+
+    within('.invoice_date_of_an_invoice') do 
+      select_date(Date.today, from: 'invoice_date_of_an_invoice')
+    end
+
+    within('.invoice_deadline') do
       select_date(Date.today, from: 'invoice_deadline')
     end
       
     submit_form
     
     expect(page).to have_text 'is not a number'
-    expect(page).to have_text 'If you prefer to give payment term more than 31 days use the deadline dropdown bellow to select dates from comming months'
-    expect(page).to have_text 'You cant give interest on arrears bellow 0 or more than 100%'
+    expect(page).to have_text 'specify a deadline or a payment term. Not both empty, nor both filled'
   end 
   
   describe 'when user has invoice' do
@@ -73,14 +77,13 @@ describe 'invoices' do
       click_link I18n.t('button.edit')
       
       fill_in 'Customer', with: 'ABB edited'
-      fill_in 'Interest on arrears', with: '12'
       fill_in 'Reference number', with: '1234'
       fill_in 'Description', with: 'Lorem lipsum edited'
 
-      within('fieldset') do
+      within('.invoice_deadline') do
         select_date(Date.today, from: 'invoice_deadline')
       end
-        
+
       submit_form
       expect(page).to have_text I18n.t('invoices.update.success_update')
       expect(page).to have_text 'ABB edited'

@@ -33,6 +33,11 @@ module FormHelper
     select sprintf '%1d', date.strftime('%d'), :from => "#{field}_3i" #day 
   end
 
+  def select_generic(field_value, options = {})
+    field = options[:form]
+    select field_value, from: "#{field}" #field_value    
+  end
+
   def submit_form
     find('input[name="commit"]').click
   end
