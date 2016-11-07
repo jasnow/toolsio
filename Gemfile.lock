@@ -176,7 +176,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    public_suffix (2.0.3)
+    public_suffix (2.0.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
