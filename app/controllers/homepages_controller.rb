@@ -1,7 +1,7 @@
 class HomepagesController < ApplicationController
   
   #skip_before_filter :authenticate_user!, only: :index
-  before_filter :authenticate_user!, only: :dashboard
+  before_action :authenticate_user!, only: :dashboard
 
   def dashboard
   
